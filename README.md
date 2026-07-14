@@ -19,7 +19,7 @@ npm run preview
 
 ## Change the working brand
 
-Update [src/config.ts](src/config.ts). The name, legal name, canonical URL, email, location, and consultation label are consumed across the layout, navigation, metadata, schema, footer, and page content.
+Update [src/config.ts](src/config.ts). The name, legal name, canonical URL, email, and consultation label are consumed across the layout, navigation, metadata, schema, footer, and page content.
 
 The visual mark is an original, code-native SVG in [src/components/BrandMark.astro](src/components/BrandMark.astro). Replace that component and [public/favicon.svg](public/favicon.svg) when the final identity is selected.
 
