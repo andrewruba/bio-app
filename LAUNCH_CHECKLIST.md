@@ -6,6 +6,7 @@
 - Update every field in `src/config.ts`, especially the canonical production URL and business email.
 - Verify that `hello@provenarium.com` is configured and receiving messages before launch.
 - Replace the working SVG mark and favicon if the visual identity changes.
+- Replace or explicitly approve the generated scientific-team placeholder photography in `public/images/`.
 - Review every service and assurance statement with the intended quality/validation partner.
 - Connect the contact form to an approved email, CRM, or privacy-conscious form service.
 - Update `src/pages/privacy.astro` to reflect the actual form and analytics behavior.

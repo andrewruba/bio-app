@@ -1,0 +1,128 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class:list={["evidence-workspace", { compact }]} aria-label="Illustrative release evidence workspace">
+  <div class="workspace-chrome">
+    <span class="chrome-dots"><i></i><i></i><i></i></span>
+    <span>Release workspace / potency-review</span>
+    <span class="workspace-state">Release ready</span>
+  </div>
+  <div class="workspace-body">
+    <aside>
+      <span class="workspace-mark">P</span>
+      <nav aria-label="Illustrative workspace sections">
+        <span>Overview</span>
+        <span>Intended use</span>
+        <span>Requirements</span>
+        <span>Risks & controls</span>
+        <span>Verification</span>
+        <span class="active">Release</span>
+      </nav>
+      <small>v1.8.2</small>
+    </aside>
+    <div class="workspace-main">
+      <div class="workspace-heading">
+        <div><small>APPLICATION / RELEASE 018</small><h3>Potency assay review</h3></div>
+        <span class="approval">Approved for release</span>
+      </div>
+      <div class="workspace-summary">
+        <div><span>Requirements</span><strong>12 / 12</strong><small>reviewed</small></div>
+        <div><span>Risk controls</span><strong>4 / 4</strong><small>verified</small></div>
+        <div><span>Automated tests</span><strong>18 / 18</strong><small>passed</small></div>
+        <div class="coverage"><span>Traceability</span><strong>100%</strong><i><b></b></i></div>
+      </div>
+      <div class="workspace-table">
+        <div class="table-head"><span>Requirement</span><span>Control</span><span>Evidence</span><span>State</span></div>
+        <div><span><b>REQ-04</b> Calculation review</span><span>CTRL-12</span><span>E2E-14</span><em>Passed</em></div>
+        <div><span><b>REQ-07</b> Source reconciliation</span><span>CTRL-18</span><span>TEST-22</span><em>Passed</em></div>
+        <div><span><b>REQ-09</b> Independent approval</span><span>CTRL-21</span><span>UAT-06</span><em>Approved</em></div>
+      </div>
+      <div class="workspace-release">
+        <span><i></i> Evidence packet complete</span>
+        <span>Change record CR-018</span>
+        <span>Checksum 8F2A…91C</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .evidence-workspace {
+    background: #0a0d0b;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 1.2rem;
+    box-shadow: 0 30px 90px rgba(8,11,9,.2);
+    color: var(--paper);
+    overflow: hidden;
+    width: 100%;
+  }
+  .workspace-chrome {
+    align-items: center;
+    display: grid;
+    font-family: var(--font-mono);
+    font-size: .62rem;
+    grid-template-columns: 1fr auto 1fr;
+    letter-spacing: .04em;
+    min-height: 2.8rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+  }
+  .chrome-dots { display: flex; gap: .32rem; }
+  .chrome-dots i { background: #405048; border-radius: 50%; height: .42rem; width: .42rem; }
+  .chrome-dots i:first-child { background: var(--accent); }
+  .workspace-state { color: var(--mint); justify-self: end; }
+  .workspace-body { background: #f7f8f6; color: var(--ink); display: grid; grid-template-columns: 9rem 1fr; }
+  aside { background: #e9eeea; border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 33rem; padding: 1.25rem .8rem; }
+  .workspace-mark { align-items: center; background: var(--ink); border-radius: .55rem; color: var(--mint); display: flex; font-size: 1.1rem; height: 2.2rem; justify-content: center; width: 2.2rem; }
+  nav { display: grid; gap: .35rem; margin-top: 3rem; }
+  nav span { border-radius: .45rem; color: var(--ink-soft); font-size: .69rem; padding: .6rem .65rem; }
+  nav .active { background: var(--paper); color: var(--ink); font-weight: 650; }
+  aside small { color: var(--ink-soft); font-family: var(--font-mono); font-size: .59rem; margin-top: auto; }
+  .workspace-main { padding: clamp(1.25rem,3vw,2.2rem); }
+  .workspace-heading { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding-bottom: 1.2rem; }
+  .workspace-heading small { color: var(--teal); font-family: var(--font-mono); font-size: .61rem; letter-spacing: .06em; }
+  .workspace-heading h3 { font-size: clamp(1.4rem,2.3vw,2.15rem); margin: .35rem 0 0; }
+  .approval { background: #dff1e4; border-radius: 999px; color: var(--teal); font-family: var(--font-mono); font-size: .6rem; padding: .5rem .65rem; text-transform: uppercase; }
+  .workspace-summary { display: grid; gap: .65rem; grid-template-columns: repeat(4,1fr); margin-block: 1rem; }
+  .workspace-summary > div { background: var(--paper); border: 1px solid var(--line); border-radius: .7rem; min-height: 6.2rem; padding: .8rem; }
+  .workspace-summary span,
+  .workspace-summary small { color: var(--ink-soft); display: block; font-size: .62rem; }
+  .workspace-summary strong { display: block; font-size: 1.45rem; font-weight: 550; letter-spacing: -.04em; margin: .7rem 0 .1rem; }
+  .coverage i { background: #e8ece9; border-radius: 999px; display: block; height: .3rem; margin-top: .55rem; overflow: hidden; }
+  .coverage i b { background: var(--teal); display: block; height: 100%; width: 100%; }
+  .workspace-table { background: var(--paper); border: 1px solid var(--line); border-radius: .7rem; overflow: hidden; }
+  .workspace-table > div { align-items: center; border-bottom: 1px solid var(--line); display: grid; font-size: .68rem; gap: .6rem; grid-template-columns: 1.7fr .7fr .7fr .55fr; min-height: 3rem; padding: .55rem .8rem; }
+  .workspace-table > div:last-child { border-bottom: 0; }
+  .workspace-table .table-head { background: #f0f3f0; color: var(--ink-soft); font-family: var(--font-mono); font-size: .57rem; min-height: 2.3rem; text-transform: uppercase; }
+  .workspace-table b { display: block; font-family: var(--font-mono); font-size: .58rem; font-weight: 500; }
+  .workspace-table em { color: var(--teal); font-style: normal; font-weight: 650; }
+  .workspace-release { align-items: center; background: var(--accent-soft); border-radius: .65rem; display: grid; font-family: var(--font-mono); font-size: .57rem; gap: .6rem; grid-template-columns: 1.2fr 1fr 1fr; margin-top: .7rem; padding: .75rem .85rem; }
+  .workspace-release span:first-child { color: var(--accent-strong); }
+  .workspace-release i { background: var(--accent-strong); border-radius: 50%; display: inline-block; height: .38rem; margin-right: .35rem; width: .38rem; }
+  .compact aside { min-height: 28rem; }
+
+  @media (max-width: 700px) {
+    .workspace-chrome { grid-template-columns: 1fr 1fr; }
+    .workspace-chrome > span:nth-child(2) { display: none; }
+    .workspace-body { grid-template-columns: 3.6rem 1fr; }
+    aside { min-height: 27rem; padding-inline: .65rem; }
+    nav span { font-size: 0; height: 1.65rem; padding: 0; position: relative; }
+    nav span::after { background: #aab5af; border-radius: 999px; content: ""; height: .3rem; left: .3rem; position: absolute; top: .65rem; width: 1.5rem; }
+    nav .active::after { background: var(--teal); }
+    aside small { display: none; }
+    .workspace-main { padding: 1rem; }
+    .approval { display: none; }
+    .workspace-summary { grid-template-columns: 1fr 1fr; }
+    .workspace-summary > div:nth-child(n+3) { display: none; }
+    .workspace-table > div { grid-template-columns: 1.6fr .7fr .6fr; }
+    .workspace-table > div span:nth-child(3),
+    .workspace-table > div em { display: none; }
+    .workspace-release { grid-template-columns: 1fr; }
+    .workspace-release span:not(:first-child) { display: none; }
+  }
+</style>

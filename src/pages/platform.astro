@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CtaBand from "../components/CtaBand.astro";
+import EvidenceWorkspace from "../components/EvidenceWorkspace.astro";
 import { site } from "../config";
 ---
 
@@ -33,6 +34,10 @@ import { site } from "../config";
   <section class="layers section-pad">
     <div class="wrap">
       <div class="section-heading" data-reveal><div><span class="eyebrow">What compounds</span><h2>One control plane above the platforms you already own.</h2></div><p>The intent is not to replace data lakes, notebooks, compute, QMS, or validation repositories. ControlPlane connects application delivery and evidence across those systems.</p></div>
+      <div class="platform-artifact" data-reveal>
+        <div class="artifact-copy"><span class="eyebrow">A navigable release record</span><h3>Evidence should behave like product data—not a document assembled at the end.</h3><p>Requirements, risks, controls, tests, approvals, and releases remain connected as the application changes. Documents become approved views of that living record.</p><ul><li>Trace a requirement to its current test result</li><li>See which controls a change may affect</li><li>Assemble release evidence from structured state</li></ul></div>
+        <EvidenceWorkspace compact />
+      </div>
       <div class="layer-stack" data-reveal>
         <article class="layer-apps"><span>Scientific products</span><div><b>Submission review</b><b>Lab analytics</b><b>Model-enabled apps</b><b>Regulatory evidence</b></div></article>
         <article class="layer-control"><span>{site.name} ControlPlane</span><div><b>Templates & SDK</b><b>Regulated components</b><b>Evidence graph</b><b>Release gates</b><b>App catalog</b></div></article>
@@ -105,6 +110,20 @@ import { site } from "../config";
   .trigger-list li { border-top: 1px solid var(--line-strong); color: var(--ink-soft); padding: 1rem 0 1rem 2rem; position: relative; }.trigger-list li::before { color: var(--accent-strong); content: "✓"; left: 0; position: absolute; }
   @media(max-width:900px){.hero-grid,.trigger-grid{grid-template-columns:1fr}.evidence-graph{max-width:40rem}.module-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:650px){.graph-node{height:6rem;width:6rem}.layer-stack article{grid-template-columns:1fr}.module-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}}
+</style>
+
+<style>
+  .platform-artifact { align-items: center; background: var(--paper-deep); border-radius: var(--radius); display: grid; gap: clamp(2.5rem,5vw,5rem); grid-template-columns: minmax(18rem,.65fr) minmax(0,1.35fr); margin-bottom: 1.2rem; overflow: hidden; padding: clamp(1.5rem,4vw,4rem); }
+  .artifact-copy h3 { font-size: clamp(2rem,3.4vw,3.5rem); margin: 1.3rem 0; max-width: 14ch; }
+  .artifact-copy p { font-size: .98rem; }
+  .artifact-copy ul { list-style: none; margin: 2rem 0 0; padding: 0; }
+  .artifact-copy li { border-top: 1px solid var(--line-strong); color: var(--ink-soft); font-size: .84rem; padding: .8rem 0 .8rem 1.5rem; position: relative; }
+  .artifact-copy li::before { color: var(--accent-strong); content: "→"; left: 0; position: absolute; }
+
+  @media(max-width:950px) {
+    .platform-artifact { grid-template-columns: 1fr; }
+    .artifact-copy h3 { max-width: 18ch; }
+  }
 </style>
 
 <style>
