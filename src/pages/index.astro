@@ -8,6 +8,38 @@ import { site } from "../config";
 
 <BaseLayout>
   <section class="hero">
+    <svg class="hero-contours" viewBox="0 0 1440 650" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="hero-contour-left" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#bce879" />
+          <stop offset="1" stop-color="#64c9ac" />
+        </linearGradient>
+        <linearGradient id="hero-contour-right" x1="1" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#87d5bb" />
+          <stop offset="1" stop-color="#bce879" />
+        </linearGradient>
+      </defs>
+      <g class="contour-left">
+        <path d="M-95 618C176 615 99 210 348-48" />
+        <path d="M-46 634C224 619 143 209 407-48" />
+        <path d="M5 648C277 618 191 205 470-48" />
+        <path d="M61 660C333 615 244 199 536-48" />
+        <path d="M121 670C394 609 302 190 604-48" />
+        <path d="M185 677C459 601 365 179 676-48" />
+        <path d="M253 682C529 590 433 166 751-48" />
+        <path d="M325 684C604 576 506 151 829-48" />
+      </g>
+      <g class="contour-right">
+        <path d="M676-48C1012 154 915 582 1190 684" />
+        <path d="M749-48C1080 139 986 574 1260 681" />
+        <path d="M821-48C1147 124 1058 563 1326 674" />
+        <path d="M890-48C1213 109 1128 550 1387 665" />
+        <path d="M957-48C1277 94 1196 535 1445 653" />
+        <path d="M1021-48C1340 80 1262 518 1499 639" />
+        <path d="M1083-48C1401 66 1326 500 1550 623" />
+        <path d="M1143-48C1460 53 1388 480 1598 605" />
+      </g>
+    </svg>
     <div class="hero-grid wrap">
       <div class="hero-copy" data-reveal>
         <span class="eyebrow">Regulated application engineering</span>
@@ -635,20 +667,18 @@ import { site } from "../config";
     padding: clamp(5.5rem, 9vw, 8.5rem) 0 0;
     position: relative;
   }
-  .hero::before,
-  .hero::after {
-    border: 1px solid rgba(37,122,87,.14);
-    border-radius: 50%;
-    content: "";
-    height: 45rem;
-    left: 50%;
+  .hero-contours {
+    height: clamp(34rem, 52vw, 43rem);
+    inset: 0 0 auto;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
+    opacity: .3;
     pointer-events: none;
     position: absolute;
-    top: 9rem;
-    transform: translateX(-50%);
-    width: 72rem;
+    width: 100%;
   }
-  .hero::after { height: 34rem; top: 14.5rem; width: 55rem; }
+  .hero-contours path { fill: none; stroke-width: 1.35; vector-effect: non-scaling-stroke; }
+  .contour-left path { stroke: url(#hero-contour-left); }
+  .contour-right path { stroke: url(#hero-contour-right); }
   .hero-grid { display: grid; gap: clamp(4rem,7vw,6.5rem); grid-template-columns: 1fr; position: relative; z-index: 1; }
   .hero-copy { margin-inline: auto; max-width: 76rem; text-align: center; }
   .hero h1 { font-size: clamp(3.8rem,7vw,7.15rem); line-height: .94; margin: 1.65rem auto 2rem; max-width: 13.5ch; }
@@ -743,9 +773,8 @@ import { site } from "../config";
   }
   @media (max-width: 720px) {
     .hero { background: radial-gradient(ellipse at 50% 60%,rgba(188,232,121,.18),transparent 45%),var(--paper); padding-top: 4.5rem; }
-    .hero::before,
-    .hero::after { display: none; }
-    .hero h1 { font-size: clamp(3.15rem,14vw,4.5rem); }
+    .hero-contours { height: 32rem; opacity: .2; transform: scaleX(1.85); }
+    .hero h1 { font-size: clamp(3rem,12.5vw,4.5rem); line-height: .98; }
     .hero-actions { align-items: center; flex-direction: column; gap: 1.4rem; }
     .app-window { min-height: 26rem; }
     .proof-grid { grid-template-columns: 1fr 1fr; }
