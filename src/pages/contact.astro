@@ -60,3 +60,32 @@ import { site } from "../config";
   .form-note{font-size:.62rem;margin:1rem 0 0}.direct{background:var(--coral)}.direct-grid{align-items:center;display:grid;gap:2rem;grid-template-columns:.6fr 1.6fr .6fr}.direct-grid>span{font-size:.68rem;font-weight:800;text-transform:uppercase}.direct-grid p{color:var(--ink);margin:0}.direct-grid>span:last-child{text-align:right}
   @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-copy{position:relative;top:auto}.direct-grid{grid-template-columns:1fr}.direct-grid>span:last-child{text-align:left}}
 </style>
+
+<style>
+  .contact-hero { background: #050706; padding: clamp(5rem,9vw,8rem) 0; }
+  .contact-grid { gap: clamp(3rem,7vw,7rem); grid-template-columns: .9fr 1.1fr; }
+  .contact-copy h1 { font-size: clamp(3.8rem,6.5vw,6.5rem); line-height: .95; }
+  .expect { border-color: rgba(255,255,255,.16); }
+  .expect > span { font-family: var(--font-mono); font-weight: 500; }
+  .email-link { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; }
+  .contact-form { border-radius: var(--radius); box-shadow: 0 30px 90px rgba(0,0,0,.28); }
+  .form-head { font-family: var(--font-mono); font-weight: 500; }
+  label > span { font-size: .76rem; font-weight: 600; }
+  input,
+  textarea,
+  select { background: #f7f8f6; border: 1px solid transparent; border-radius: .65rem; padding: .9rem 1rem; }
+  textarea { border: 1px solid transparent; }
+  input:focus,
+  textarea:focus,
+  select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(37,122,87,.12); }
+  .direct { background: var(--coral); }
+
+  @media(max-width:850px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-copy { position: relative; top: auto; }
+    .direct-grid { grid-template-columns: 1fr; }
+  }
+  @media(max-width:600px) {
+    .contact-copy h1 { font-size: clamp(3.15rem,14vw,4.5rem); }
+  }
+</style>

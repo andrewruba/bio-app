@@ -59,3 +59,41 @@ import { site } from "../config";
   @media(max-width:850px){.about-grid,.story-grid,.capabilities-grid{grid-template-columns:1fr}.story-art{max-width:32rem;position:relative;top:auto}.principle-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:600px){.principle-grid,.capability-list{grid-template-columns:1fr}.capability-list span:nth-child(even){border-left:0}}
 </style>
+
+<style>
+  .about-hero { background: var(--paper); padding-bottom: clamp(6rem,11vw,10rem); padding-top: clamp(6rem,10vw,9rem); }
+  .about-grid { align-items: end; grid-template-columns: 1.25fr .75fr; }
+  .about-hero h1 { font-size: clamp(3.9rem,7vw,7.25rem); line-height: .95; margin-top: 1.5rem; }
+  .about-hero .lead { font-size: clamp(1.25rem,1.8vw,1.6rem); font-weight: 500; }
+
+  .story { background: var(--paper-deep); }
+  .story-art { aspect-ratio: 1; border-radius: var(--radius); top: 7rem; }
+  .timeline { border: 0; display: grid; gap: 1rem; }
+  .timeline article { background: var(--paper); border-radius: var(--radius); padding: clamp(1.75rem,4vw,3.5rem); }
+  .timeline article::before { display: none; }
+  .timeline article > span { font-family: var(--font-mono); font-weight: 500; }
+  .timeline h2 { margin-top: 2.5rem; }
+
+  .principles { background: #133c2d; }
+  .principle-grid { gap: .8rem; }
+  .principle-grid article { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 1rem; min-height: 21rem; }
+  .principle-grid h3 { margin-top: 4.5rem; }
+
+  .capabilities { background: var(--paper); }
+  .capability-list { gap: .8rem; }
+  .capability-list span { background: var(--paper-deep); border: 0; border-radius: .8rem; font-size: 1rem; font-weight: 600; padding: 1.35rem; }
+  .capability-list span:nth-child(even) { border-left: 0; }
+
+  @media(max-width:850px) {
+    .about-grid,
+    .story-grid,
+    .capabilities-grid { grid-template-columns: 1fr; }
+    .story-art { max-width: 34rem; position: relative; top: auto; }
+    .principle-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media(max-width:600px) {
+    .about-hero h1 { font-size: clamp(3.15rem,14vw,4.5rem); }
+    .principle-grid,
+    .capability-list { grid-template-columns: 1fr; }
+  }
+</style>
