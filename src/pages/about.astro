@@ -4,22 +4,22 @@ import CtaBand from "../components/CtaBand.astro";
 import { site } from "../config";
 ---
 
-<BaseLayout title="About Andrew Ruba" description="Meet Andrew Ruba, a PhD scientist, inventor, business operator, and scientific software engineer building R and Python applications for life-sciences workflows.">
+<BaseLayout title={`About ${site.name}`} description={`${site.name} is a regulated application engineering partner for life-sciences teams, connecting workflow discovery, R and Python product development, assurance, deployment, and continued operation.`}>
   <section class="about-hero section-pad">
     <div class="wrap about-grid">
-      <div data-reveal><span class="eyebrow">About the founder</span><h1>A scientist who builds products—and stays for the operational details.</h1></div>
-      <div data-reveal><p class="lead">Andrew Ruba has spent more than a decade turning difficult scientific questions into working systems: microscopy hardware, computer-vision pipelines, simulation and modeling tools, and production R and Python applications for pharmaceutical research.</p><p>{site.name} is the application partner he wanted on those projects: close enough to understand the science, rigorous enough to earn technical and quality trust, and accountable beyond the first deployment.</p></div>
+      <div data-reveal><span class="eyebrow">About {site.name}</span><h1>The accountable application partner for scientific work.</h1></div>
+      <div data-reveal><p class="lead">{site.name} helps life-sciences teams replace fragile spreadsheets, SAS chains, scripts, and manual review processes with governed R and Python applications.</p><p>The category is regulated application engineering: one delivery model that connects the workflow, software product, assurance evidence, deployment, and operating lifecycle.</p></div>
     </div>
   </section>
 
   <section class="story section-pad">
     <div class="wrap story-grid">
-      <div class="story-art" data-reveal><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><span>AR</span><small>Philadelphia · scientist / engineer / operator</small></div>
+      <div class="story-art" data-reveal><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><span>P</span><small>Workflow · product · evidence · operation</small></div>
       <div class="timeline" data-reveal>
-        <article><span>Research</span><h2>Measure what was previously hard to see.</h2><p>Andrew earned a PhD in Biology while developing computer-vision analysis, Monte Carlo simulation, and new microscopy methods. His patented optical design increases photon collection for fluorescence microscopy.</p></article>
-        <article><span>Scientific systems</span><h2>Connect software to the real experiment.</h2><p>As a postdoctoral researcher at the University of Pennsylvania, he built software around custom light-sheet microscopy, 3D neural imaging, behavioral tracking, and model-based neuroscience.</p></article>
-        <article><span>Pharmaceutical R&amp;D</span><h2>Turn specialist analysis into products teams can use.</h2><p>His experience includes leading R Shiny and Python Streamlit/Dash application delivery, integrating machine learning and chemometric models, automating simulation workflows, and working directly with scientists through requirements, demonstrations, and refinement.</p></article>
-        <article><span>Operations</span><h2>Own the outcome, not only the artifact.</h2><p>As a cofounder of a two-location fitness business, Andrew has also hired, budgeted, built physical operations, and served customers. It created a bias toward simple systems that people adopt and businesses can actually run.</p></article>
+        <article><span>01 / Discover</span><h2>Begin with the work, not a technology preference.</h2><p>Map the people, decisions, data, systems, manual handoffs, failure points, and intended use before features and infrastructure become expensive.</p></article>
+        <article><span>02 / Build</span><h2>Engineer the complete product around the analysis.</h2><p>Keep scientific logic modular and independently tested while designing the interface, integrations, security, observability, deployment, and support model around real users.</p></article>
+        <article><span>03 / Assure</span><h2>Match evidence and controls to the application’s use.</h2><p>Connect requirements, risks, controls, tests, approvals, and releases so assurance develops with the product instead of being reconstructed afterward.</p></article>
+        <article><span>04 / Operate</span><h2>Remain accountable as the application changes.</h2><p>Plan monitoring, dependency updates, incidents, enhancements, change impact, regression, controlled releases, and periodic review as part of the same system.</p></article>
       </div>
     </div>
   </section>
@@ -31,12 +31,11 @@ import { site } from "../config";
     </div>
   </section>
 
-  <section class="credentials section-pad">
-    <div class="wrap credentials-grid" data-reveal><div><span class="eyebrow">Relevant depth</span><h2>Science, software, and the business between them.</h2></div><div class="credential-list"><span>PhD, Biology</span><span>Senior scientific software engineering</span><span>R, Python, Shiny, Streamlit & Dash</span><span>Machine learning & computer vision</span><span>Peer-reviewed publications</span><span>U.S. patent in microscopy</span><span>Product discovery & stakeholder delivery</span><span>Business cofounder & operator</span></div></div>
-    <p class="disclosure wrap">Experience described on this page belongs to Andrew Ruba personally and predates {site.name}. It is included as founder background, not represented as client work completed by {site.name}.</p>
+  <section class="capabilities section-pad">
+    <div class="wrap capabilities-grid" data-reveal><div><span class="eyebrow">Full-lifecycle capability</span><h2>Science, software, and assurance in one operating model.</h2></div><div class="capability-list"><span>Scientific workflow discovery</span><span>R and Python product engineering</span><span>Shiny, Streamlit, Dash, React & APIs</span><span>Data and model integration</span><span>User-centered workflow design</span><span>Automated verification</span><span>Validation-ready evidence</span><span>Deployment and managed releases</span></div></div>
   </section>
 
-  <CtaBand eyebrow="Work founder to founder—or scientist to scientist" title="Bring the workflow you wish someone would finally own." />
+  <CtaBand eyebrow="Start with one bounded workflow" title="Bring the process that needs a durable product owner." />
 </BaseLayout>
 
 <style>
@@ -56,7 +55,7 @@ import { site } from "../config";
   .timeline h2 { font-size: clamp(2rem,4vw,3.8rem); margin: 1rem 0; max-width: 13ch; }.timeline p{max-width:42rem}
   .principles { background: var(--teal); color: var(--paper); }.principles :global(.section-heading h2){color:var(--paper)}.principles :global(.section-heading p){color:var(--white-soft)}
   .principle-grid { display: grid; grid-template-columns: repeat(3,1fr); }.principle-grid article{border:1px solid rgba(255,255,255,.25);min-height:22rem;padding:2rem}.principle-grid span{color:var(--mint);font-size:.65rem;font-weight:800}.principle-grid h3{color:var(--paper);margin:5rem 0 1rem}.principle-grid p{color:var(--white-soft);font-size:.82rem}
-  .credentials { background: var(--paper-deep); }.credentials-grid{display:grid;gap:clamp(3rem,8vw,9rem);grid-template-columns:.8fr 1.2fr}.credentials h2{margin:1rem 0 0}.credential-list{display:grid;grid-template-columns:1fr 1fr}.credential-list span{border-top:1px solid var(--line-strong);color:var(--ink);font-family:var(--font-serif);font-size:1.1rem;padding:1rem}.credential-list span:nth-child(even){border-left:1px solid var(--line)}.disclosure{font-size:.65rem;font-style:italic;margin-top:4rem}
-  @media(max-width:850px){.about-grid,.story-grid,.credentials-grid{grid-template-columns:1fr}.story-art{max-width:32rem;position:relative;top:auto}.principle-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.principle-grid,.credential-list{grid-template-columns:1fr}.credential-list span:nth-child(even){border-left:0}}
+  .capabilities { background: var(--paper-deep); }.capabilities-grid{display:grid;gap:clamp(3rem,8vw,9rem);grid-template-columns:.8fr 1.2fr}.capabilities h2{margin:1rem 0 0}.capability-list{display:grid;grid-template-columns:1fr 1fr}.capability-list span{border-top:1px solid var(--line-strong);color:var(--ink);font-family:var(--font-serif);font-size:1.1rem;padding:1rem}.capability-list span:nth-child(even){border-left:1px solid var(--line)}
+  @media(max-width:850px){.about-grid,.story-grid,.capabilities-grid{grid-template-columns:1fr}.story-art{max-width:32rem;position:relative;top:auto}.principle-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.principle-grid,.capability-list{grid-template-columns:1fr}.capability-list span:nth-child(even){border-left:0}}
 </style>

@@ -1,10 +1,9 @@
 export const site = {
-  name: "Signal & State",
-  legalName: "Signal & State",
-  url: "https://signalandstate.example",
+  name: "Provenarium",
+  legalName: "Provenarium",
+  url: "https://provenarium.com",
   description:
     "Regulated application engineering for life sciences: workflow discovery, R and Python application development, validation-ready delivery, deployment, and ongoing assurance.",
-  email: "ruba.andrew@gmail.com",
-  location: "Philadelphia, Pennsylvania",
+  email: "hello@provenarium.com",
   consultationLabel: "Discuss a workflow"
 } as const;

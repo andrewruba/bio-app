@@ -1,4 +1,4 @@
-# Signal & State — marketing site architecture
+# Provenarium — marketing site architecture
 
 ## Positioning
 
@@ -29,23 +29,23 @@ The site should sell an accountable application lifecycle, not engineering hours
 | `/services/app-assure` | ongoing application validation and support | Keep a changing application reliable, supported, and in a controlled state |
 | `/services/app-factory` | pharma app factory / analytics product team | Deliver a governed portfolio using reusable components and one operating model |
 | `/platform` | regulated app platform / validation as code | Future-facing control plane: evidence graph, reusable controls, release automation |
-| `/about` | scientific software consultant | Founder credibility, technical philosophy, and engagement fit |
+| `/about` | regulated application engineering company | Brand promise, delivery philosophy, and engagement model |
 | `/contact` | app modernization consultation | Low-friction consultation request and qualification prompts |
 
 ## Homepage schematic
 
 1. **Navigation** — working brand, services lifecycle menu, platform, about, consultation CTA.
 2. **Hero** — “Turn critical scientific workflows into applications teams can trust.” Supporting copy names spreadsheets/SAS/manual work, R/Python, validation, deployment, and support.
-3. **Credibility rail** — honest founder proof: 10+ years across scientific research/software, R + Python delivery, PhD scientist and patented inventor, production pharma experience.
+3. **Credibility rail** — R + Python delivery, full-lifecycle ownership, risk-based assurance, and customer-owned foundations.
 4. **Problem framing** — the analysis works, but the workflow around it is manual, fragile, difficult to share, and hard to approve.
 5. **Application lifecycle** — horizontal seven-stage architecture from WorkflowScan through ControlPlane. Each stage links to a detailed route.
 6. **Workflow families** — submission/review and QC; laboratory/CMC analysis; model-enabled research tools; existing app rescue.
 7. **Assurance model** — exploratory, controlled, and validated levels tied to intended use rather than blanket documentation.
 8. **Delivery model** — discover, specify, build, verify, release, operate. AI accelerates requirements, scaffolding, testing, and traceability; named people own decisions and releases.
-9. **Founder section** — scientist-builder perspective, pharma app experience, peer-reviewed research, patent, and business ownership.
+9. **Brand model** — one partner connecting discovery, product engineering, assurance, deployment, and continued operation.
 10. **Fit / anti-fit** — ideal bounded, painful workflows; not first-wave replacements for LIMS/MES/EDC or autonomous regulated decisions.
 11. **Conversion band** — offer a 30-minute workflow triage call with clear expectations.
-12. **Footer** — lifecycle links, company links, direct email, Philadelphia base.
+12. **Footer** — lifecycle links, company links, branded email, and delivery principles.
 
 ## Service-page anatomy
 
@@ -70,11 +70,11 @@ The design borrows Appsilon’s confidence and editorial pacing without copying 
 - **Graphic language:** grids, specimen labels, trace lines, release stamps, data curves, and modular application panels.
 - **Layout:** generous margins, large editorial headings, asymmetrical two-column sections, numbered lifecycle rails, dark evidence bands, and strong horizontal dividers.
 - **Motion:** subtle reveal transitions, animated trace paths, and tactile hover states; all disabled under reduced-motion preferences.
-- **Photography:** not required for launch. The founder and work are represented with original interface/evidence graphics so the site remains honest and fast.
+- **Photography:** not required for launch. The offering is represented with original interface, workflow, and evidence graphics so the site remains honest and fast.
 
 ## Content guardrails
 
-- Do not imply Signal & State has Appsilon’s team size, client roster, partnerships, validation product, or case-study metrics.
+- Do not imply Provenarium has Appsilon’s team size, client roster, partnerships, validation product, or case-study metrics.
 - Do not present current-employer projects as company case studies.
 - Separate “validation-ready engineering” from customer QA approval; the customer owns intended-use approval and validation decisions.
 - Present ControlPlane as the direction the delivery system grows toward, not a mature licensed platform available today.

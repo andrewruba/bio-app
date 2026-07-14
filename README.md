@@ -1,4 +1,4 @@
-# Signal & State marketing site
+# Provenarium marketing site
 
 A static, search-friendly marketing site for a life-sciences R and Python application consultancy. The working brand is temporary and intentionally easy to replace.
 
@@ -29,7 +29,7 @@ The visual mark is an original, code-native SVG in [src/components/BrandMark.ast
 - Service content: [src/data/services.ts](src/data/services.ts)
 - Reusable service route: [src/pages/services/[slug].astro](src/pages/services/[slug].astro)
 - Platform direction: [src/pages/platform.astro](src/pages/platform.astro)
-- Founder story: [src/pages/about.astro](src/pages/about.astro)
+- Brand story and operating model: [src/pages/about.astro](src/pages/about.astro)
 - Contact flow: [src/pages/contact.astro](src/pages/contact.astro)
 - Site schematic and content guardrails: [SITE_ARCHITECTURE.md](SITE_ARCHITECTURE.md)
 

@@ -22,7 +22,7 @@ import { site } from "../config";
         <div class="visual-topline"><span>Scientific review workspace</span><span class="live-dot">controlled</span></div>
         <div class="app-window">
           <aside class="app-side">
-            <span class="app-logo">S·S</span>
+            <span class="app-logo">{site.name.charAt(0)}</span>
             <span>Overview</span><span class="selected">Model review</span><span>Samples</span><span>Evidence</span>
           </aside>
           <div class="app-main">
@@ -47,10 +47,10 @@ import { site } from "../config";
 
   <section class="proof-rail">
     <div class="wrap proof-grid">
-      <div><strong>10+ years</strong><span>scientific research & software</span></div>
       <div><strong>R + Python</strong><span>Shiny, Streamlit, Dash & APIs</span></div>
-      <div><strong>Scientist-builder</strong><span>PhD, published researcher, inventor</span></div>
       <div><strong>Full lifecycle</strong><span>discovery through managed release</span></div>
+      <div><strong>Risk-based</strong><span>assurance matched to intended use</span></div>
+      <div><strong>Customer-owned</strong><span>code, deployment, and evidence</span></div>
     </div>
   </section>
 
@@ -158,19 +158,18 @@ import { site } from "../config";
     </div>
   </section>
 
-  <section class="founder section-pad" id="founder">
-    <div class="wrap founder-grid">
-      <div class="founder-portrait" data-reveal aria-label="Abstract founder profile graphic">
-        <div class="portrait-grid"></div><span class="portrait-initials">AR</span><span class="portrait-label">Scientist · engineer · operator</span>
+  <section class="partner section-pad" id="approach">
+    <div class="wrap partner-grid">
+      <div class="partner-graphic" data-reveal aria-label="Application lifecycle framework graphic">
+        <div class="partner-grid-lines"></div><span class="partner-initial">P</span><span class="partner-label">Discover · build · assure · operate</span>
       </div>
-      <div class="founder-copy" data-reveal>
-        <span class="eyebrow">Founder-led by design</span>
-        <h2>Built by someone who has lived inside the workflow.</h2>
-        <p class="lead">Andrew Ruba is a PhD scientist and senior scientific software engineer who has moved from microscope hardware and computer vision research to production R and Python applications in pharmaceutical R&D.</p>
-        <p>His experience includes leading scientific app delivery, integrating advanced models with working products, gathering requirements directly with researchers, and operating a brick-and-mortar business. The through-line is practical: understand how people work, build what changes the work, and stay accountable to the outcome.</p>
-        <div class="founder-proof"><span><b>Peer-reviewed</b> scientific research</span><span><b>Patented</b> microscopy invention</span><span><b>Production</b> pharma applications</span><span><b>Founder</b> and business operator</span></div>
-        <p class="experience-note">Representative experience belongs to the founder and predates {site.name}; it is not presented as client work of the company.</p>
-        <a class="button button-outline" href="/about">Meet the founder <span aria-hidden="true">↗</span></a>
+      <div class="partner-copy" data-reveal>
+        <span class="eyebrow">One partner across the lifecycle</span>
+        <h2>The application is only as strong as the system around it.</h2>
+        <p class="lead">{site.name} combines scientific workflow discovery, product engineering, application-level assurance, deployment, and continued operation in one accountable delivery model.</p>
+        <p>The offer is designed around a practical reality: useful analysis does not become a durable product by adding an interface alone. Adoption, testing, traceability, release controls, infrastructure, and ownership must move together.</p>
+        <div class="partner-proof"><span><b>Discover</b> the real workflow</span><span><b>Build</b> the production product</span><span><b>Assure</b> in proportion to risk</span><span><b>Operate</b> through continued change</span></div>
+        <a class="button button-outline" href="/about">How {site.name} works <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -313,18 +312,17 @@ import { site } from "../config";
   .method-principles h3 { font-size: 1.7rem; margin: 2rem 0 1rem; }
   .method-principles p { font-size: 0.82rem; }
 
-  .founder { background: var(--wash); }
-  .founder-grid { align-items: center; display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.8fr 1.2fr; }
-  .founder-portrait { aspect-ratio: 4/5; background: var(--teal); box-shadow: 1.5rem 1.5rem 0 var(--coral); color: var(--paper); display: grid; overflow: hidden; place-items: center; position: relative; }
-  .portrait-grid { background-image: linear-gradient(rgba(255,255,255,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.12) 1px,transparent 1px); background-size: 2.5rem 2.5rem; inset: 0; position: absolute; }
-  .portrait-initials { border: 1px solid var(--mint); border-radius: 50%; display: grid; font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 8rem); height: 65%; place-items: center; width: 80%; z-index: 1; }
-  .portrait-label { bottom: 1rem; font-size: 0.62rem; letter-spacing: 0.1em; position: absolute; text-transform: uppercase; }
-  .founder-copy h2 { margin: 1.1rem 0 2rem; max-width: 13ch; }
-  .founder-copy .lead { color: var(--ink); font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.45; }
-  .founder-proof { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; margin: 2rem 0; }
-  .founder-proof span { color: var(--ink-soft); font-size: 0.7rem; padding: 0.8rem 0; }
-  .founder-proof b { color: var(--teal); }
-  .experience-note { font-size: 0.65rem; font-style: italic; }
+  .partner { background: var(--wash); }
+  .partner-grid { align-items: center; display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.8fr 1.2fr; }
+  .partner-graphic { aspect-ratio: 4/5; background: var(--teal); box-shadow: 1.5rem 1.5rem 0 var(--coral); color: var(--paper); display: grid; overflow: hidden; place-items: center; position: relative; }
+  .partner-grid-lines { background-image: linear-gradient(rgba(255,255,255,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.12) 1px,transparent 1px); background-size: 2.5rem 2.5rem; inset: 0; position: absolute; }
+  .partner-initial { border: 1px solid var(--mint); border-radius: 50%; display: grid; font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 8rem); height: 65%; place-items: center; width: 80%; z-index: 1; }
+  .partner-label { bottom: 1rem; font-size: 0.62rem; letter-spacing: 0.1em; position: absolute; text-transform: uppercase; }
+  .partner-copy h2 { margin: 1.1rem 0 2rem; max-width: 13ch; }
+  .partner-copy .lead { color: var(--ink); font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.45; }
+  .partner-proof { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; margin: 2rem 0; }
+  .partner-proof span { color: var(--ink-soft); font-size: 0.7rem; padding: 0.8rem 0; }
+  .partner-proof b { color: var(--teal); }
 
   .fit { background: var(--paper); }
   .fit-grid { display: grid; gap: clamp(2rem, 5vw, 5rem); grid-template-columns: 1.15fr 1fr 1fr; }
@@ -335,7 +333,7 @@ import { site } from "../config";
   .fit li::before { color: var(--coral); content: "→"; left: 0; position: absolute; }
 
   @media (max-width: 1000px) {
-    .hero-grid, .problem-grid, .assurance-grid, .founder-grid { grid-template-columns: 1fr; }
+    .hero-grid, .problem-grid, .assurance-grid, .partner-grid { grid-template-columns: 1fr; }
     .hero h1 { max-width: 13ch; }
     .hero-visual { margin: 0 auto; max-width: 45rem; width: 100%; }
     .workflow-grid { grid-template-columns: 1fr 1fr; }
@@ -344,7 +342,7 @@ import { site } from "../config";
     .method-track { grid-template-columns: repeat(3, 1fr); }
     .fit-grid { grid-template-columns: 1fr 1fr; }
     .fit-grid > div:first-child { grid-column: 1 / -1; }
-    .founder-portrait { max-width: 32rem; }
+    .partner-graphic { max-width: 32rem; }
   }
   @media (min-width: 1200px) {
     .lifecycle-track { grid-template-columns: repeat(7, minmax(0, 1fr)); }
