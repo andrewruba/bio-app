@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config";
+---
+
+<BaseLayout title="Privacy" description={`Privacy information for the ${site.name} website.`}>
+  <section class="legal section-pad"><div class="content-wrap"><span class="eyebrow">Privacy</span><h1>A simple site with minimal data collection.</h1><p class="updated">Last updated July 13, 2026</p><h2>Contact form</h2><p>The launch version of this site does not transmit or store contact-form entries. Submitting the form prepares a message in your local email application. Your email provider then handles the message under its own terms.</p><h2>Direct email</h2><p>If you contact <a href={`mailto:${site.email}`}>{site.email}</a>, the information you include is used to respond to your inquiry and evaluate a potential engagement. It is not sold.</p><h2>Analytics and cookies</h2><p>No analytics or advertising cookies are configured in this repository at launch. If privacy-respecting analytics are added for the traffic test, this notice should be updated before deployment.</p><h2>Questions</h2><p>For privacy questions, contact <a href={`mailto:${site.email}`}>{site.email}</a>.</p></div></section>
+</BaseLayout>
+<style>.legal{background:var(--paper)}.legal h1{font-size:clamp(3.5rem,7vw,6.5rem);margin:1.2rem 0 1rem;max-width:12ch}.legal h2{font-family:var(--font-sans);font-size:.82rem;font-weight:800;letter-spacing:.08em;margin:3.5rem 0 1rem;text-transform:uppercase}.legal .updated{border-bottom:1px solid var(--line);font-size:.7rem;padding-bottom:2rem}.legal a{color:var(--teal)}</style>

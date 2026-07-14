@@ -1,0 +1,62 @@
+---
+import BrandMark from "./BrandMark.astro";
+import { services } from "../data/services";
+import { site } from "../config";
+---
+
+<footer class="site-footer">
+  <div class="footer-main wrap">
+    <div class="footer-intro">
+      <a href="/" aria-label={`${site.name} home`}><BrandMark /></a>
+      <p>Regulated application engineering for life sciences.</p>
+      <a class="text-link light" href={`mailto:${site.email}`}>{site.email}<span aria-hidden="true">↗</span></a>
+    </div>
+    <div>
+      <span class="footer-label">Lifecycle</span>
+      <ul>
+        {services.map((service) => <li><a href={`/services/${service.slug}`}>{service.name}</a></li>)}
+        <li><a href="/platform">ControlPlane</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-label">Company</span>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Discuss a workflow</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="footer-note">
+      <span class="footer-label">Working principle</span>
+      <p>AI-accelerated delivery.<br />Human-accountable releases.</p>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>© {new Date().getFullYear()} {site.legalName}</span>
+    <span>{site.location} · Serving life-sciences teams across the U.S.</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--ink); color: var(--white-soft); padding-top: clamp(4rem, 8vw, 7rem); }
+  .footer-main { display: grid; gap: 3rem; grid-template-columns: 1.6fr 1fr 0.8fr 1.15fr; }
+  .footer-intro :global(.brand) { color: var(--paper); }
+  .footer-intro p { color: var(--white-soft); max-width: 18rem; }
+  .footer-label { color: var(--mint); display: block; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.13em; margin-bottom: 1.2rem; text-transform: uppercase; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li + li { margin-top: 0.65rem; }
+  li a { color: var(--white-soft); font-size: 0.82rem; text-decoration: none; }
+  li a:hover { color: var(--mint); }
+  .footer-note p { color: var(--paper); font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.25; margin: 0; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.16); display: flex; font-size: 0.68rem; justify-content: space-between; margin-top: 5rem; padding-bottom: 1.5rem; padding-top: 1.5rem; }
+
+  @media (max-width: 800px) {
+    .footer-main { grid-template-columns: 1fr 1fr; }
+    .footer-intro { grid-column: 1 / -1; }
+  }
+  @media (max-width: 520px) {
+    .footer-main { grid-template-columns: 1fr; }
+    .footer-intro { grid-column: auto; }
+    .footer-bottom { flex-direction: column; gap: 0.6rem; }
+  }
+</style>

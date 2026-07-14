@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config";
+---
+
+<BaseLayout title="Discuss a Scientific Workflow" description={`Talk with ${site.name} about modernizing a scientific, analytical, laboratory, or submission-supporting workflow with a production R or Python application.`}>
+  <section class="contact-hero">
+    <div class="wrap contact-grid">
+      <div class="contact-copy" data-reveal>
+        <span class="eyebrow mint">Start with the workflow</span>
+        <h1>What work should be easier than it is?</h1>
+        <p>Bring one recurring scientific process, the people doing it, and the milestone it is affecting. The first conversation is for finding the smallest useful next move—not forcing a platform sale.</p>
+        <div class="expect"><span>In 30 minutes, we’ll cover</span><ul><li>The decision and current process</li><li>Users, systems, and manual handoffs</li><li>Intended use and likely assurance level</li><li>The smallest credible prototype or discovery step</li></ul></div>
+        <a class="email-link" href={`mailto:${site.email}`}>{site.email}<span>↗</span></a>
+      </div>
+      <form class="contact-form" id="contact-form" data-email={site.email} data-reveal>
+        <div class="form-head"><span>Workflow brief</span><span>01 — 05</span></div>
+        <label><span>Your name</span><input name="name" autocomplete="name" required /></label>
+        <label><span>Work email</span><input name="email" type="email" autocomplete="email" required /></label>
+        <label><span>Organization</span><input name="organization" autocomplete="organization" /></label>
+        <label><span>What is the workflow?</span><textarea name="workflow" rows="5" required placeholder="Today we use… The people involved are… The bottleneck is…"></textarea></label>
+        <label><span>What makes it important now?</span><select name="trigger"><option value="">Select a trigger</option><option>Study or submission milestone</option><option>Laboratory or CMC program</option><option>Manual errors or cycle time</option><option>Existing app needs productionization</option><option>Validation or quality need</option><option>Application portfolio backlog</option><option>Other</option></select></label>
+        <button class="button button-coral" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+        <p class="form-note">This launch version opens the completed brief in your email client. It does not send or store form data on the website.</p>
+      </form>
+    </div>
+  </section>
+  <section class="direct section-pad-small"><div class="wrap direct-grid"><span>Prefer a direct introduction?</span><p>Email <a href={`mailto:${site.email}`}>{site.email}</a> with a sentence about the workflow and the team affected. You do not need a written specification.</p><span>{site.location}</span></div></section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const recipient = form.dataset.email ?? "";
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const organization = String(data.get("organization") ?? "");
+    const workflow = String(data.get("workflow") ?? "");
+    const trigger = String(data.get("trigger") ?? "");
+    const subject = `Workflow discussion — ${organization || name}`;
+    const body = `Name: ${name}\nEmail: ${email}\nOrganization: ${organization}\nTrigger: ${trigger}\n\nWorkflow:\n${workflow}`;
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+
+<style>
+  .contact-hero { background: var(--ink); color: var(--paper); padding: clamp(4rem,8vw,8rem) 0; }
+  .contact-grid { align-items: start; display: grid; gap: clamp(3rem,8vw,9rem); grid-template-columns: .9fr 1.1fr; }
+  .contact-copy { position: sticky; top: 8rem; }
+  .contact-copy h1 { color: var(--paper); font-size: clamp(4rem,7vw,7rem); margin: 1.2rem 0 2rem; max-width: 11ch; }
+  .contact-copy > p { color: var(--white-soft); max-width: 37rem; }
+  .expect { border-top: 1px solid rgba(255,255,255,.2); margin-top: 3rem; padding-top: 1.5rem; }.expect>span{color:var(--mint);font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.expect ul{list-style:none;margin:1rem 0 0;padding:0}.expect li{color:var(--white-soft);font-size:.78rem;padding:.35rem 0}.expect li::before{color:var(--coral);content:"→";margin-right:.7rem}
+  .email-link { align-items:center;border-bottom:1px solid var(--mint);color:var(--mint);display:flex;font-family:var(--font-serif);font-size:1.2rem;justify-content:space-between;margin-top:3rem;padding-bottom:.5rem;text-decoration:none;max-width:25rem}
+  .contact-form { background: var(--paper); color: var(--ink); padding: clamp(1.5rem,4vw,3rem); }
+  .form-head { border-bottom: 1px solid var(--line-strong); display:flex;font-size:.65rem;font-weight:800;justify-content:space-between;letter-spacing:.1em;margin-bottom:2rem;padding-bottom:1rem;text-transform:uppercase }
+  label { display:block;margin-bottom:1.5rem } label>span{display:block;font-size:.68rem;font-weight:800;margin-bottom:.5rem}
+  input,textarea,select{background:transparent;border:0;border-bottom:1px solid var(--line-strong);border-radius:0;color:var(--ink);outline:none;padding:.7rem 0;width:100%}textarea{border:1px solid var(--line-strong);padding:1rem;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--teal);box-shadow:0 1px 0 var(--teal)}
+  .form-note{font-size:.62rem;margin:1rem 0 0}.direct{background:var(--coral)}.direct-grid{align-items:center;display:grid;gap:2rem;grid-template-columns:.6fr 1.6fr .6fr}.direct-grid>span{font-size:.68rem;font-weight:800;text-transform:uppercase}.direct-grid p{color:var(--ink);margin:0}.direct-grid>span:last-child{text-align:right}
+  @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-copy{position:relative;top:auto}.direct-grid{grid-template-columns:1fr}.direct-grid>span:last-child{text-align:left}}
+</style>

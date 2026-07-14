@@ -1,0 +1,60 @@
+---
+import { site } from "../config";
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const [brandFirst, brandSecond] = site.name.includes(" & ")
+  ? site.name.split(" & ")
+  : [site.name, ""];
+---
+
+<span class:list={["brand", { compact }]} aria-label={site.name}>
+  <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
+    <path d="M5 31.5 15.5 11l10.2 20.5L36.5 11" />
+    <circle cx="5" cy="31.5" r="2.6" />
+    <circle cx="15.5" cy="11" r="2.6" />
+    <circle cx="25.7" cy="31.5" r="2.6" />
+    <circle cx="36.5" cy="11" r="2.6" />
+  </svg>
+  <span class="brand-type"><span>{brandFirst}</span>{brandSecond && <span>&amp; {brandSecond}</span>}</span>
+</span>
+
+<style>
+  .brand {
+    align-items: center;
+    color: var(--ink);
+    display: inline-flex;
+    gap: 0.65rem;
+  }
+
+  .brand-mark {
+    fill: var(--paper);
+    height: 2.1rem;
+    overflow: visible;
+    stroke: var(--mint-dark);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 2.1rem;
+  }
+
+  .brand-type {
+    display: grid;
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 760;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+
+  .brand-type span:last-child {
+    color: var(--ink-soft);
+  }
+
+  .compact .brand-type {
+    display: none;
+  }
+</style>

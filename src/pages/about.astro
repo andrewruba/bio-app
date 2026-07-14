@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { site } from "../config";
+---
+
+<BaseLayout title="About Andrew Ruba" description="Meet Andrew Ruba, a PhD scientist, inventor, business operator, and scientific software engineer building R and Python applications for life-sciences workflows.">
+  <section class="about-hero section-pad">
+    <div class="wrap about-grid">
+      <div data-reveal><span class="eyebrow">About the founder</span><h1>A scientist who builds products—and stays for the operational details.</h1></div>
+      <div data-reveal><p class="lead">Andrew Ruba has spent more than a decade turning difficult scientific questions into working systems: microscopy hardware, computer-vision pipelines, simulation and modeling tools, and production R and Python applications for pharmaceutical research.</p><p>{site.name} is the application partner he wanted on those projects: close enough to understand the science, rigorous enough to earn technical and quality trust, and accountable beyond the first deployment.</p></div>
+    </div>
+  </section>
+
+  <section class="story section-pad">
+    <div class="wrap story-grid">
+      <div class="story-art" data-reveal><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><span>AR</span><small>Philadelphia · scientist / engineer / operator</small></div>
+      <div class="timeline" data-reveal>
+        <article><span>Research</span><h2>Measure what was previously hard to see.</h2><p>Andrew earned a PhD in Biology while developing computer-vision analysis, Monte Carlo simulation, and new microscopy methods. His patented optical design increases photon collection for fluorescence microscopy.</p></article>
+        <article><span>Scientific systems</span><h2>Connect software to the real experiment.</h2><p>As a postdoctoral researcher at the University of Pennsylvania, he built software around custom light-sheet microscopy, 3D neural imaging, behavioral tracking, and model-based neuroscience.</p></article>
+        <article><span>Pharmaceutical R&amp;D</span><h2>Turn specialist analysis into products teams can use.</h2><p>His experience includes leading R Shiny and Python Streamlit/Dash application delivery, integrating machine learning and chemometric models, automating simulation workflows, and working directly with scientists through requirements, demonstrations, and refinement.</p></article>
+        <article><span>Operations</span><h2>Own the outcome, not only the artifact.</h2><p>As a cofounder of a two-location fitness business, Andrew has also hired, budgeted, built physical operations, and served customers. It created a bias toward simple systems that people adopt and businesses can actually run.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles section-pad">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><span class="eyebrow mint">Working principles</span><h2>The standard behind the work.</h2></div><p>Technical quality is part of the product. So are the process, the user’s trust, and the organization’s ability to operate what gets built.</p></div>
+      <div class="principle-grid" data-reveal><article><span>01</span><h3>Workflow before interface</h3><p>Observe the decisions, handoffs, failure points, and responsibilities before choosing features.</p></article><article><span>02</span><h3>Logic outside the UI</h3><p>Keep scientific calculations modular and independently tested so they can be verified, reused, and changed safely.</p></article><article><span>03</span><h3>Assurance from intended use</h3><p>Apply evidence and controls in proportion to how the application is actually used.</p></article><article><span>04</span><h3>AI behind explicit standards</h3><p>Use AI to accelerate precise work while people remain accountable for judgment, risk, and release.</p></article><article><span>05</span><h3>Customer-owned foundations</h3><p>Build for the platforms, teams, and source-control boundaries the organization already governs.</p></article><article><span>06</span><h3>Operation is designed</h3><p>Monitoring, support, changes, evidence, and handover belong in the architecture before go-live.</p></article></div>
+    </div>
+  </section>
+
+  <section class="credentials section-pad">
+    <div class="wrap credentials-grid" data-reveal><div><span class="eyebrow">Relevant depth</span><h2>Science, software, and the business between them.</h2></div><div class="credential-list"><span>PhD, Biology</span><span>Senior scientific software engineering</span><span>R, Python, Shiny, Streamlit & Dash</span><span>Machine learning & computer vision</span><span>Peer-reviewed publications</span><span>U.S. patent in microscopy</span><span>Product discovery & stakeholder delivery</span><span>Business cofounder & operator</span></div></div>
+    <p class="disclosure wrap">Experience described on this page belongs to Andrew Ruba personally and predates {site.name}. It is included as founder background, not represented as client work completed by {site.name}.</p>
+  </section>
+
+  <CtaBand eyebrow="Work founder to founder—or scientist to scientist" title="Bring the workflow you wish someone would finally own." />
+</BaseLayout>
+
+<style>
+  .about-hero { background: var(--paper); }
+  .about-grid { display: grid; gap: clamp(3rem,8vw,9rem); grid-template-columns: 1.2fr .8fr; }
+  .about-hero h1 { font-size: clamp(4rem,7vw,7.5rem); margin: 1.2rem 0 0; max-width: 12ch; }
+  .about-hero .lead { color: var(--ink); font-family: var(--font-serif); font-size: clamp(1.4rem,2vw,1.9rem); line-height: 1.45; }
+  .story { background: var(--wash); }
+  .story-grid { align-items: start; display: grid; gap: clamp(3rem,8vw,9rem); grid-template-columns: .7fr 1.3fr; }
+  .story-art { aspect-ratio: 4/5; background: var(--ink); color: var(--paper); display: grid; overflow: hidden; place-items: center; position: sticky; top: 8rem; }
+  .story-art > span { font-family: var(--font-serif); font-size: clamp(5rem,10vw,10rem); position: relative; z-index: 2; }
+  .story-art small { bottom: 1.2rem; color: var(--mint); font-size: .55rem; letter-spacing: .08em; position: absolute; text-transform: uppercase; }
+  .ring { border: 1px solid rgba(212,255,116,.4); border-radius: 50%; position: absolute; }.r1{height:35%;width:44%}.r2{height:60%;width:75%}.r3{height:90%;width:112%}
+  .timeline { border-left: 1px solid var(--line-strong); }
+  .timeline article { padding: 1rem 0 5rem clamp(2rem,5vw,5rem); position: relative; }.timeline article::before{background:var(--coral);border-radius:50%;content:"";height:.7rem;left:-.37rem;position:absolute;top:1rem;width:.7rem}
+  .timeline article > span { color: var(--teal); font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .timeline h2 { font-size: clamp(2rem,4vw,3.8rem); margin: 1rem 0; max-width: 13ch; }.timeline p{max-width:42rem}
+  .principles { background: var(--teal); color: var(--paper); }.principles :global(.section-heading h2){color:var(--paper)}.principles :global(.section-heading p){color:var(--white-soft)}
+  .principle-grid { display: grid; grid-template-columns: repeat(3,1fr); }.principle-grid article{border:1px solid rgba(255,255,255,.25);min-height:22rem;padding:2rem}.principle-grid span{color:var(--mint);font-size:.65rem;font-weight:800}.principle-grid h3{color:var(--paper);margin:5rem 0 1rem}.principle-grid p{color:var(--white-soft);font-size:.82rem}
+  .credentials { background: var(--paper-deep); }.credentials-grid{display:grid;gap:clamp(3rem,8vw,9rem);grid-template-columns:.8fr 1.2fr}.credentials h2{margin:1rem 0 0}.credential-list{display:grid;grid-template-columns:1fr 1fr}.credential-list span{border-top:1px solid var(--line-strong);color:var(--ink);font-family:var(--font-serif);font-size:1.1rem;padding:1rem}.credential-list span:nth-child(even){border-left:1px solid var(--line)}.disclosure{font-size:.65rem;font-style:italic;margin-top:4rem}
+  @media(max-width:850px){.about-grid,.story-grid,.credentials-grid{grid-template-columns:1fr}.story-art{max-width:32rem;position:relative;top:auto}.principle-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.principle-grid,.credential-list{grid-template-columns:1fr}.credential-list span:nth-child(even){border-left:0}}
+</style>

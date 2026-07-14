@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { site } from "../config";
+---
+
+<BaseLayout title="ControlPlane: The Regulated Application Delivery System" description={`The platform direction for ${site.name}: reusable application foundations, structured validation evidence, controlled releases, and deployment adapters for life-sciences teams.`}>
+  <section class="platform-hero">
+    <div class="wrap hero-grid">
+      <div data-reveal>
+        <div class="hero-meta"><span>07 / 07</span><span>Platform direction</span></div>
+        <span class="eyebrow mint">ControlPlane</span>
+        <h1>The delivery system becomes the platform.</h1>
+        <p>Every application strengthens a governed layer of templates, controls, evidence, and release automation. Once proven across a portfolio, that layer can support customer and partner developers—not only our delivery team.</p>
+        <a class="button button-mint" href="/contact">Discuss the platform path <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="evidence-graph" data-reveal aria-label="Evidence graph connecting a requirement to a release">
+        <span class="graph-label">evidence graph / release 1.8.2</span>
+        <div class="graph-node requirement"><small>REQ</small><strong>4.2</strong><span>Calculation review</span></div>
+        <div class="graph-node risk"><small>RISK</small><strong>R-07</strong><span>Incorrect result</span></div>
+        <div class="graph-node control"><small>CTRL</small><strong>C-12</strong><span>Independent check</span></div>
+        <div class="graph-node test"><small>TEST</small><strong>E2E-14</strong><span>Passed</span></div>
+        <div class="graph-node release"><small>RELEASE</small><strong>1.8.2</strong><span>Approved</span></div>
+        <svg viewBox="0 0 600 600" aria-hidden="true"><path d="M145 140 C250 80 330 110 393 177M420 210 C490 270 480 342 412 393M380 425 C300 495 223 481 164 411M140 380 C76 306 81 224 130 170M174 158 C250 218 328 275 397 393" /></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="status section-pad-small">
+    <div class="content-wrap status-grid" data-reveal><span>Read this first</span><div><h2>ControlPlane is a direction, not shelfware.</h2><p>It begins as proprietary delivery infrastructure used on every engagement. It becomes a customer-facing platform only after the patterns are proven across applications and external teams ask to use the system themselves.</p></div></div>
+  </section>
+
+  <section class="layers section-pad">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><span class="eyebrow">What compounds</span><h2>One control plane above the platforms you already own.</h2></div><p>The intent is not to replace data lakes, notebooks, compute, QMS, or validation repositories. ControlPlane connects application delivery and evidence across those systems.</p></div>
+      <div class="layer-stack" data-reveal>
+        <article class="layer-apps"><span>Scientific products</span><div><b>Submission review</b><b>Lab analytics</b><b>Model-enabled apps</b><b>Regulatory evidence</b></div></article>
+        <article class="layer-control"><span>{site.name} ControlPlane</span><div><b>Templates & SDK</b><b>Regulated components</b><b>Evidence graph</b><b>Release gates</b><b>App catalog</b></div></article>
+        <article class="layer-platform"><span>Customer platforms</span><div><b>Domino</b><b>Posit</b><b>Databricks</b><b>Kubernetes</b><b>AWS / Azure / GCP</b></div></article>
+        <article class="layer-systems"><span>Systems of record</span><div><b>Data lakes</b><b>LIMS / ELN</b><b>Veeva</b><b>Kneat</b><b>ValGenesis</b><b>Jira / ServiceNow</b></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="modules section-pad">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><span class="eyebrow mint">Platform modules</span><h2>The reusable layer beneath every release.</h2></div><p>These capabilities are built first to make client delivery faster and more reliable. Structured data is the source; documents become approved views of that evidence.</p></div>
+      <div class="module-grid" data-reveal>
+        <article><span>01</span><h3>Application SDK</h3><p>Opinionated R/Shiny, Python, and web templates with testing, security, observability, and deployment metadata preconfigured.</p></article>
+        <article><span>02</span><h3>Regulated components</h3><p>Reusable identity, review, approval, reason-for-change, audit event, data lineage, reconciliation, and reporting patterns.</p></article>
+        <article><span>03</span><h3>Evidence graph</h3><p>A structured relationship from requirement to risk, control, code component, test result, defect, approval, and release.</p></article>
+        <article><span>04</span><h3>Continuous assurance</h3><p>Change detection, impact assessment, regression selection, evidence assembly, deviation workflow, and release gates.</p></article>
+        <article><span>05</span><h3>Deployment adapters</h3><p>Customer-owned delivery across Domino, Posit Connect, Databricks, Kubernetes, and existing CI/CD systems.</p></article>
+        <article><span>06</span><h3>System integrations</h3><p>Push approved records into the organization’s QMS, validation, service, and document systems instead of displacing them.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="trigger section-pad">
+    <div class="wrap trigger-grid">
+      <div data-reveal><span class="eyebrow">The product trigger</span><h2>Software only after the delivery system earns it.</h2></div>
+      <div class="trigger-list" data-reveal><p>ControlPlane becomes a standalone offer when:</p><ul><li>It supports every {site.name} project</li><li>10–15 applications have been deployed through it</li><li>It has processed dozens of controlled releases</li><li>Reusable patterns materially reduce delivery and assurance effort</li><li>Customer teams ask to build through the same controls</li></ul></div>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Build toward the platform" title="Start with the application that proves the system." text="A platform is credible when it has carried real workflows, real changes, and real approvals. Let’s identify the first application that should shape it." label="Find the first workflow" />
+</BaseLayout>
+
+<style>
+  .platform-hero { background: var(--ink); color: var(--paper); padding: clamp(5rem, 9vw, 9rem) 0; }
+  .hero-grid { align-items: center; display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.9fr 1.1fr; }
+  .hero-meta { border-bottom: 1px solid rgba(255,255,255,.2); color: var(--mint); display: flex; font-size: .64rem; font-weight: 800; justify-content: space-between; letter-spacing: .1em; margin-bottom: 3rem; padding-bottom: 1rem; text-transform: uppercase; }
+  .platform-hero h1 { color: var(--paper); font-size: clamp(3.8rem, 7vw, 7.6rem); margin: 1rem 0 2rem; }
+  .platform-hero p { color: var(--white-soft); max-width: 40rem; }
+  .platform-hero .button { margin-top: 2rem; }
+  .evidence-graph { aspect-ratio: 1; background: #0b2325; border: 1px solid rgba(255,255,255,.2); overflow: hidden; position: relative; }
+  .graph-label { color: var(--mint); font-size: .55rem; left: 1rem; letter-spacing: .1em; position: absolute; text-transform: uppercase; top: 1rem; }
+  .evidence-graph svg { inset: 0; position: absolute; }
+  .evidence-graph path { fill: none; stroke: rgba(212,255,116,.45); stroke-dasharray: 5 5; stroke-width: 1.2; }
+  .graph-node { background: var(--paper); border: 1px solid var(--mint); color: var(--ink); display: grid; height: 8rem; padding: .8rem; position: absolute; width: 8rem; z-index: 2; }
+  .graph-node small { color: var(--teal); font-size: .5rem; font-weight: 800; }.graph-node strong { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 500; }.graph-node span { align-self: end; color: var(--ink-soft); font-size: .55rem; }
+  .requirement { left: 7%; top: 10%; }.risk { right: 9%; top: 19%; }.control { left: 40%; top: 40%; }.test { bottom: 10%; right: 10%; }.release { bottom: 7%; left: 9%; background: var(--mint); }
+  .status { background: var(--coral); }
+  .status-grid { display: grid; gap: 2rem; grid-template-columns: auto 1fr; }
+  .status-grid > span { border: 1px solid var(--ink); border-radius: 999px; font-size: .65rem; font-weight: 800; height: fit-content; padding: .4rem .7rem; text-transform: uppercase; }
+  .status h2 { font-size: clamp(2rem,4vw,4rem); margin-bottom: 1rem; }.status p { color: var(--ink); margin: 0; }
+  .layers { background: var(--paper); }
+  .layer-stack { border: 1px solid var(--line-strong); padding: 1rem; }
+  .layer-stack article { display: grid; gap: 1rem; grid-template-columns: 12rem 1fr; padding: 1rem; }
+  .layer-stack article + article { border-top: 1px solid var(--line); }
+  .layer-stack article > span { color: var(--ink-soft); font-size: .65rem; font-weight: 800; letter-spacing: .08em; padding: .7rem; text-transform: uppercase; }
+  .layer-stack article div { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit,minmax(8rem,1fr)); }
+  .layer-stack b { background: var(--wash); font-size: .7rem; padding: .9rem; text-align: center; }
+  .layer-control { background: var(--teal); color: var(--paper); }.layer-control > span { color: var(--mint) !important; }.layer-control b { background: var(--ink); color: var(--paper); }
+  .modules { background: var(--teal); color: var(--paper); }
+  .modules :global(.section-heading h2) { color: var(--paper); }.modules :global(.section-heading p) { color: var(--white-soft); }
+  .module-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+  .module-grid article { border: 1px solid rgba(255,255,255,.25); min-height: 22rem; padding: 2rem; }
+  .module-grid span { color: var(--mint); font-size: .65rem; font-weight: 800; }.module-grid h3 { color: var(--paper); margin: 5rem 0 1rem; }.module-grid p { color: var(--white-soft); font-size: .82rem; }
+  .trigger { background: var(--paper-deep); }
+  .trigger-grid { display: grid; gap: clamp(3rem,8vw,9rem); grid-template-columns: .9fr 1.1fr; }
+  .trigger h2 { margin: 1rem 0 0; max-width: 12ch; }
+  .trigger-list > p { color: var(--ink); font-family: var(--font-serif); font-size: 1.4rem; }
+  .trigger-list ul { list-style: none; margin: 2rem 0 0; padding: 0; }
+  .trigger-list li { border-top: 1px solid var(--line-strong); color: var(--ink-soft); padding: 1rem 0 1rem 2rem; position: relative; }.trigger-list li::before { color: var(--coral); content: "✓"; left: 0; position: absolute; }
+  @media(max-width:900px){.hero-grid,.trigger-grid{grid-template-columns:1fr}.evidence-graph{max-width:40rem}.module-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:650px){.graph-node{height:6rem;width:6rem}.layer-stack article{grid-template-columns:1fr}.module-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}}
+</style>

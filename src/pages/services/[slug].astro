@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import { services, type Service } from "../../data/services";
+import { site } from "../../config";
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+interface Props { service: Service }
+const { service } = Astro.props;
+const index = services.findIndex((item) => item.slug === service.slug);
+const previous = index > 0 ? services[index - 1] : null;
+const next = index < services.length - 1 ? services[index + 1] : null;
+---
+
+<BaseLayout title={`${service.name}: ${service.category}`} description={service.metaDescription}>
+  <section class="service-hero">
+    <div class="wrap service-hero-grid">
+      <div data-reveal>
+        <div class="service-meta"><span>{service.number} / 06</span><span>{service.category}</span></div>
+        <h1>{service.headline}</h1>
+        <p class="hero-dek">{service.description}</p>
+        <div class="hero-actions"><a class="button button-mint" href="/contact">{service.cta} <span aria-hidden="true">↗</span></a><a class="text-link light" href="#deliverables">See deliverables <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="service-diagram" data-reveal>
+        <div class="diagram-head"><span>Offer / {service.number}</span><span>{site.name}</span></div>
+        <div class="diagram-center"><span class="diagram-number">{service.number}</span><strong>{service.name}</strong><small>{service.category}</small></div>
+        <div class="diagram-orbit o1"></div><div class="diagram-orbit o2"></div>
+        <span class="diagram-node n1">workflow</span><span class="diagram-node n2">product</span><span class="diagram-node n3">evidence</span><span class="diagram-node n4">operation</span>
+        <div class="diagram-foot"><span>customer-owned</span><span>risk-based</span><span>release-ready</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem section-pad">
+    <div class="wrap two-col" data-reveal>
+      <div><span class="eyebrow">When this is the right move</span><h2>{service.problemTitle}</h2></div>
+      <div>{service.problem.map((paragraph) => <p>{paragraph}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="outcomes section-pad">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><span class="eyebrow">What changes</span><h2>Outcomes the team can feel.</h2></div><p>The engagement is organized around the work after delivery: the decision gets faster, the product gets used, and the operating burden becomes explicit.</p></div>
+      <div class="outcome-grid" data-reveal>
+        {service.outcomes.map((outcome, i) => <article><span>0{i + 1}</span><h3>{outcome.title}</h3><p>{outcome.text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="deliverables section-pad" id="deliverables">
+    <div class="wrap deliverable-grid">
+      <div data-reveal><span class="eyebrow mint">What you leave with</span><h2>Concrete artifacts, not a capability cloud.</h2><p>Exact scope follows the workflow, intended use, and systems involved. These are the standard outputs around which the engagement is shaped.</p></div>
+      <ol data-reveal>{service.deliverables.map((deliverable, i) => <li><span>{String(i + 1).padStart(2, "0")}</span>{deliverable}</li>)}</ol>
+    </div>
+  </section>
+
+  <section class="steps section-pad">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><span class="eyebrow">How it works</span><h2>A visible path from question to decision.</h2></div><p>No black-box build. The people doing, approving, and operating the work stay close to each material decision.</p></div>
+      <ol class="step-grid" data-reveal>{service.steps.map((step, i) => <li><span>{String(i + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
+    </div>
+  </section>
+
+  <section class="fit-section section-pad">
+    <div class="wrap fit-grid">
+      <div data-reveal><span class="eyebrow">Good signals</span><h2>This offer is likely a fit when…</h2></div>
+      <ul data-reveal>{service.fit.map((item) => <li>{item}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="assurance-note section-pad-small">
+    <div class="content-wrap note-grid" data-reveal><span class="note-mark">A</span><div><span class="mini-label">Assurance & ownership</span><h2>Clear boundaries make better systems.</h2><p>{service.assurance}</p></div></div>
+  </section>
+
+  <nav class="service-pagination wrap" aria-label="Adjacent services">
+    {previous ? <a href={`/services/${previous.slug}`}><small>Previous offer</small><span>← {previous.name}</span></a> : <span></span>}
+    {next ? <a class="next" href={`/services/${next.slug}`}><small>Next offer</small><span>{next.name} →</span></a> : <a class="next" href="/platform"><small>Next offer</small><span>ControlPlane →</span></a>}
+  </nav>
+
+  <CtaBand eyebrow={`Offer ${service.number} / ${service.name}`} title={service.headline} label={service.cta} />
+</BaseLayout>
+
+<style>
+  .service-hero { background: var(--ink); color: var(--paper); overflow: hidden; padding: clamp(4rem, 8vw, 8rem) 0; }
+  .service-hero-grid { align-items: center; display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 1.05fr 0.75fr; }
+  .service-meta { border-bottom: 1px solid rgba(255,255,255,0.2); color: var(--mint); display: flex; font-size: 0.68rem; font-weight: 800; justify-content: space-between; letter-spacing: 0.11em; padding-bottom: 1rem; text-transform: uppercase; }
+  .service-hero h1 { color: var(--paper); font-size: clamp(3.5rem, 6.5vw, 7rem); margin: 2rem 0; max-width: 11.5ch; }
+  .hero-dek { color: var(--white-soft); font-size: 1.2rem; max-width: 40rem; }
+  .hero-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2.5rem; }
+  .service-diagram { aspect-ratio: 1; background: var(--wash); color: var(--ink); display: grid; overflow: hidden; padding: 1rem; place-items: center; position: relative; }
+  .diagram-head, .diagram-foot { display: flex; font-size: 0.58rem; justify-content: space-between; left: 1rem; letter-spacing: 0.1em; position: absolute; right: 1rem; text-transform: uppercase; z-index: 2; }
+  .diagram-head { top: 1rem; }.diagram-foot { bottom: 1rem; }
+  .diagram-center { align-items: center; display: flex; flex-direction: column; position: relative; text-align: center; z-index: 3; }
+  .diagram-number { color: var(--coral); font-size: 0.68rem; font-weight: 800; }
+  .diagram-center strong { font-family: var(--font-serif); font-size: clamp(1.65rem, 3vw, 2.8rem); font-weight: 500; line-height: .95; margin: 0.4rem 0; max-width: 70%; overflow-wrap: anywhere; }
+  .diagram-center small { color: var(--ink-soft); font-size: 0.6rem; }
+  .diagram-orbit { border: 1px solid var(--line-strong); border-radius: 50%; position: absolute; }
+  .o1 { height: 62%; width: 62%; }.o2 { height: 87%; width: 87%; }
+  .diagram-node { background: var(--paper); border: 1px solid var(--teal); border-radius: 50%; display: grid; font-size: 0.5rem; height: 3.4rem; place-items: center; position: absolute; width: 3.4rem; z-index: 2; }
+  .n1 { left: 13%; top: 45%; }.n2 { left: 45%; top: 12%; }.n3 { right: 12%; top: 45%; }.n4 { bottom: 11%; left: 45%; }
+  .two-col { display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 1.05fr 0.95fr; }
+  .two-col h2 { margin: 1.2rem 0 0; max-width: 13ch; }
+  .two-col p:first-child { color: var(--ink); font-family: var(--font-serif); font-size: 1.45rem; line-height: 1.4; }
+  .outcomes { background: var(--wash-blue); }
+  .outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .outcome-grid article { border: 1px solid var(--line); min-height: 23rem; padding: clamp(1.5rem, 3vw, 2.7rem); }
+  .outcome-grid article + article { border-left: 0; }
+  .outcome-grid span { color: var(--coral); font-size: 0.7rem; font-weight: 800; }
+  .outcome-grid h3 { margin: 5rem 0 1rem; max-width: 10ch; }
+  .outcome-grid p { font-size: 0.86rem; }
+  .deliverables { background: var(--teal); color: var(--paper); }
+  .deliverable-grid { display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.8fr 1.2fr; }
+  .deliverable-grid h2 { color: var(--paper); margin: 1.2rem 0 2rem; }
+  .deliverable-grid p { color: var(--white-soft); }
+  .deliverable-grid ol { border-top: 1px solid rgba(255,255,255,0.25); list-style: none; margin: 0; padding: 0; }
+  .deliverable-grid li { border-bottom: 1px solid rgba(255,255,255,0.25); color: var(--paper); display: grid; font-family: var(--font-serif); font-size: clamp(1.1rem, 2vw, 1.55rem); grid-template-columns: 3rem 1fr; padding: 1rem 0; }
+  .deliverable-grid li span { color: var(--mint); font-family: var(--font-sans); font-size: 0.6rem; font-weight: 800; padding-top: 0.35rem; }
+  .steps { background: var(--paper-deep); }
+  .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; margin: 0; padding: 0; }
+  .step-grid li { border-bottom: 1px solid var(--line-strong); border-top: 1px solid var(--line-strong); min-height: 22rem; padding: 1.3rem; }
+  .step-grid li + li { border-left: 1px solid var(--line); }
+  .step-grid span { color: var(--teal); font-size: 0.65rem; font-weight: 800; }
+  .step-grid h3 { margin: 5rem 0 1rem; }
+  .step-grid p { font-size: 0.8rem; }
+  .fit-section { background: var(--paper); }
+  .fit-grid { display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.9fr 1.1fr; }
+  .fit-grid h2 { margin: 1.2rem 0 0; max-width: 12ch; }
+  .fit-grid ul { list-style: none; margin: 0; padding: 0; }
+  .fit-grid li { border-top: 1px solid var(--line-strong); color: var(--ink); font-family: var(--font-serif); font-size: clamp(1.05rem, 1.8vw, 1.45rem); padding: 1.2rem 1rem 1.2rem 3rem; position: relative; }
+  .fit-grid li::before { color: var(--coral); content: "→"; left: 0; position: absolute; }
+  .assurance-note { background: var(--wash); }
+  .note-grid { align-items: start; display: grid; gap: 2rem; grid-template-columns: auto 1fr; }
+  .note-mark { border: 1px solid var(--teal); border-radius: 50%; display: grid; font-family: var(--font-serif); font-size: 2rem; height: 5rem; place-items: center; width: 5rem; }
+  .note-grid h2 { font-size: clamp(2rem, 4vw, 3.6rem); margin: 1rem 0; }
+  .service-pagination { display: flex; justify-content: space-between; padding-bottom: 2.5rem; padding-top: 2.5rem; }
+  .service-pagination a { color: var(--ink); text-decoration: none; }
+  .service-pagination small, .service-pagination span { display: block; }
+  .service-pagination small { color: var(--ink-soft); font-size: 0.58rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; text-transform: uppercase; }
+  .service-pagination span { font-family: var(--font-serif); font-size: 1.2rem; }
+  .service-pagination .next { text-align: right; }
+  @media (max-width: 900px) { .service-hero-grid, .two-col, .deliverable-grid, .fit-grid { grid-template-columns: 1fr; }.service-diagram { max-width: 38rem; }.step-grid { grid-template-columns: 1fr 1fr; }.step-grid li:nth-child(3) { border-left: 0; } }
+  @media (max-width: 650px) { .outcome-grid, .step-grid { grid-template-columns: 1fr; }.outcome-grid article + article, .step-grid li + li { border-left: 1px solid var(--line); border-top: 0; }.service-pagination span { font-size: 0.95rem; }.note-grid { grid-template-columns: 1fr; } }
+</style>
