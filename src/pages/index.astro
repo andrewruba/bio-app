@@ -35,12 +35,14 @@ import { site } from "../config";
             </div>
             <div class="metrics"><div><small>Input rows</small><strong>148</strong></div><div><small>Checks passed</small><strong>12/12</strong></div><div><small>Report state</small><strong>Ready</strong></div></div>
             <div class="plot-card">
-              <div class="plot-label"><span>Processed assay response</span><span>QC passed</span></div>
-              <svg viewBox="0 0 520 180" role="img" aria-label="Processed assay response chart ready for a report">
-                <g class="grid-lines"><path d="M40 20V185M40 185H500M40 145H500M40 105H500M40 65H500" /></g>
-                <path class="band" d="M40 166 C135 145 205 124 285 94 S410 57 500 34 L500 69 C403 80 346 110 283 126 S145 171 40 184Z" />
-                <path class="curve" d="M40 175 C138 150 205 131 286 101 S411 64 500 45" />
-                <g class="points"><circle cx="73" cy="164" r="5"/><circle cx="111" cy="154" r="5"/><circle cx="151" cy="142" r="5"/><circle cx="192" cy="133" r="5"/><circle cx="230" cy="117" r="5"/><circle cx="269" cy="112" r="5"/><circle cx="305" cy="91" r="5"/><circle cx="348" cy="88" r="5"/><circle cx="390" cy="70" r="5"/><circle cx="426" cy="68" r="5"/><circle cx="466" cy="50" r="5"/></g>
+              <div class="plot-label"><span>4PL dose–response fit</span><span>R² 0.997</span></div>
+              <svg viewBox="0 0 520 180" role="img" aria-label="Four-parameter logistic dose-response curve with observed assay sample points">
+                <g class="grid-lines"><path d="M40 18V160M40 160H500M40 122H500M40 84H500M40 46H500" /></g>
+                <path class="band" d="M40 151 C108 151 154 147 190 132 C221 119 237 92 260 73 C294 47 340 32 500 29 L500 49 C341 52 300 66 267 91 C242 110 226 137 194 151 C157 167 110 171 40 172Z" />
+                <path class="curve" d="M40 162 C109 162 155 157 192 142 C224 129 240 101 263 82 C296 56 340 42 500 39" />
+                <g class="points"><circle cx="68" cy="160" r="5"/><circle cx="103" cy="159" r="5"/><circle cx="139" cy="154" r="5"/><circle cx="177" cy="145" r="5"/><circle cx="211" cy="130" r="5"/><circle cx="243" cy="105" r="5"/><circle cx="274" cy="74" r="5"/><circle cx="309" cy="59" r="5"/><circle cx="349" cy="47" r="5"/><circle cx="398" cy="43" r="5"/><circle cx="456" cy="38" r="5"/></g>
+                <text class="axis-label x-label" x="270" y="176">Log concentration</text>
+                <text class="axis-label y-label" x="10" y="92" transform="rotate(-90 10 92)">Response</text>
               </svg>
             </div>
             <div class="trace-row"><span><i></i> Source batch recorded</span><span>Process v1.8.2</span><span>Report QC passed</span><span class="trace-check">✓</span></div>
@@ -268,6 +270,7 @@ import { site } from "../config";
   .band { fill: #b9ded7; opacity: 0.7; }
   .curve { fill: none; stroke: var(--teal); stroke-width: 3; }
   .points { fill: var(--accent-strong); stroke: #fff; stroke-width: 2; }
+  .axis-label { fill: var(--ink-soft); font-family: var(--font-mono); font-size: 7px; letter-spacing: .03em; text-anchor: middle; }
   .trace-row { align-items: center; background: var(--wash); display: grid; font-size: 0.47rem; grid-template-columns: 1.4fr 0.8fr 1.2fr auto; margin-top: 0.6rem; padding: 0.7rem; }
   .trace-row i { background: var(--teal-bright); border-radius: 50%; display: inline-block; height: 0.4rem; margin-right: 0.2rem; width: 0.4rem; }
   .trace-check { background: var(--mint); border-radius: 50%; display: grid; height: 1.4rem; place-items: center; width: 1.4rem; }
