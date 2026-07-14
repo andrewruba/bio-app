@@ -126,16 +126,16 @@ import { site } from "../config";
       </div>
       <div class="workflow-grid">
         <article class="workflow-card featured" data-reveal>
-          <div class="workflow-art flow-art clinical-art" aria-label="Representative clinical application: load ADaM datasets, process quality checks, and generate a QC report">
-            <div class="flow-chrome"><span>Clinical QC application</span><b>Ready</b></div>
-            <div class="flow-steps">
-              <div class="flow-step"><small>01</small><strong>Load</strong><span>ADaM datasets</span><em>3 files</em></div>
-              <i aria-hidden="true">→</i>
-              <div class="flow-step"><small>02</small><strong>Process</strong><span>Run QC checks</span><em>12 passed</em></div>
-              <i aria-hidden="true">→</i>
-              <div class="flow-step active"><small>03</small><strong>Generate report</strong><span>QC summary</span><em>PDF</em></div>
+          <div class="workflow-art qc-art" aria-label="Representative clinical QC application comparing source and derived clinical datasets">
+            <div class="app-art-head"><span>Clinical reconciliation workspace</span><b>Study ABC-101</b></div>
+            <div class="qc-summary"><div><small>Datasets</small><strong>03</strong></div><div><small>Checks</small><strong>42</strong></div><div><small>Needs review</small><strong>02</strong></div></div>
+            <div class="qc-table">
+              <div class="qc-row qc-header"><span>Dataset</span><span>Source</span><span>Derived</span><span>Status</span></div>
+              <div class="qc-row"><strong>ADSL</strong><span>148</span><span>148</span><em>Matched</em></div>
+              <div class="qc-row attention"><strong>ADAE</strong><span>326</span><span>324</span><em>2 review</em></div>
+              <div class="qc-row"><strong>TFL</strong><span>42</span><span>42</span><em>Ready</em></div>
             </div>
-            <div class="flow-output"><span>qc_report.pdf</span><b>Ready for review</b></div>
+            <div class="qc-footer"><span>Comparison rules v1.4</span><b>Open review queue →</b></div>
           </div>
           <div class="workflow-copy"><span class="number-label">01 / Clinical & submission support</span><h3>Review and QC without the reconciliation maze.</h3><p>Clinical data review, TFL/ADaM/SDTM QC, submission readiness, biomarker review, cross-study reconciliation, and controlled reporting.</p><div class="tag-row"><span class="tag">Biometrics</span><span class="tag">Statistical programming</span><span class="tag">Data review</span></div></div>
         </article>
@@ -155,17 +155,12 @@ import { site } from "../config";
             <div class="workflow-copy"><span class="number-label">02 / Laboratory & CMC</span><h3>Make methods usable beyond the scientist who wrote them.</h3><p>Assay calculations, sample reconciliation, method transfer, stability review, instrument-data aggregation, and exception workflows above systems of record.</p><div class="tag-row"><span class="tag">Analytical development</span><span class="tag">Digital labs</span></div></div>
           </article>
           <article class="workflow-card" data-reveal>
-            <div class="workflow-art flow-art model-art" aria-label="Representative model application: load model inputs, run a prediction, and generate a review report">
-              <div class="flow-chrome"><span>Model review application</span><b>Version 2.3</b></div>
-              <div class="flow-steps">
-                <div class="flow-step"><small>01</small><strong>Load</strong><span>Model inputs</span><em>148 rows</em></div>
-                <i aria-hidden="true">→</i>
-                <div class="flow-step"><small>02</small><strong>Process</strong><span>Run prediction</span><em>Complete</em></div>
-                <i aria-hidden="true">→</i>
-                <div class="flow-step active"><small>03</small><strong>Generate report</strong><span>Review report</span><em>PDF</em></div>
+            <div class="workflow-art model-review-art" aria-label="Representative model review application showing a prediction, confidence, coverage, and drift checks">
+              <div class="app-art-head"><span>Model review application</span><b>Model v2.3</b></div>
+              <div class="prediction-panel"><div><small>Predicted response</small><strong>87.4%</strong><span>Within decision range</span></div><div class="confidence"><small>Confidence</small><div><i></i></div><b>High</b></div></div>
+              <div class="model-checks"><div><small>Input coverage</small><strong>100%</strong></div><div><small>Domain check</small><strong>Passed</strong></div><div><small>Drift</small><strong>Low</strong></div></div>
+              <div class="model-review-footer"><span>Human review required</span><b>Review prediction →</b></div>
               </div>
-              <div class="flow-output"><span>prediction_review.pdf</span><b>Ready for review</b></div>
-            </div>
             <div class="workflow-copy"><span class="number-label">03 / Model-enabled research</span><h3>Put advanced models inside a workflow scientists will adopt.</h3><p>Prediction tools, chemometrics, computer vision, simulation orchestration, model review, and human-approved AI capabilities.</p><div class="tag-row"><span class="tag">Discovery</span><span class="tag">ML / AI</span><span class="tag">Modeling</span></div></div>
           </article>
         </div>
@@ -480,6 +475,49 @@ import { site } from "../config";
   .model-art .flow-chrome b,
   .model-art .flow-output { color: #dce8e0; }
   .model-art .flow-step span { color: var(--ink-soft); }
+
+  .qc-art,
+  .model-review-art { padding: .75rem; }
+  .qc-art { background: #174d3e; color: var(--paper); }
+  .model-review-art { background: #111713; color: var(--paper); }
+  .app-art-head { align-items: center; display: flex; font-family: var(--font-mono); font-size: .55rem; justify-content: space-between; letter-spacing: .04em; text-transform: uppercase; }
+  .app-art-head b { align-items: center; display: flex; font-size: .52rem; font-weight: 500; gap: .35rem; }
+  .app-art-head b::before { background: var(--mint); border-radius: 50%; content: ""; height: .35rem; width: .35rem; }
+  .qc-summary { display: grid; gap: .4rem; grid-template-columns: repeat(3,1fr); margin-top: .6rem; }
+  .qc-summary > div { background: rgba(255,255,255,.1); border-radius: .45rem; padding: .4rem .55rem; }
+  .qc-summary small,
+  .qc-summary strong { display: block; }
+  .qc-summary small { color: #c9d6ce; font-size: .46rem; }
+  .qc-summary strong { font-size: .76rem; margin-top: .15rem; }
+  .qc-table { background: var(--paper); border-radius: .5rem; color: var(--ink); margin-top: .45rem; overflow: hidden; }
+  .qc-row { align-items: center; display: grid; font-family: var(--font-mono); font-size: .48rem; grid-template-columns: 1.3fr .7fr .7fr 1fr; min-height: 1.35rem; padding: .23rem .55rem; }
+  .qc-row + .qc-row { border-top: 1px solid var(--line); }
+  .qc-row em { color: var(--teal); font-style: normal; justify-self: end; }
+  .qc-row.attention { background: #f4f1e7; }
+  .qc-row.attention em { color: #8a641c; }
+  .qc-header { color: var(--ink-soft); font-size: .42rem; text-transform: uppercase; }
+  .qc-footer,
+  .model-review-footer { align-items: center; background: rgba(255,255,255,.1); border-radius: .4rem; display: flex; font-family: var(--font-mono); font-size: .46rem; justify-content: space-between; margin-top: .45rem; padding: .38rem .5rem; }
+  .qc-footer b,
+  .model-review-footer b { color: var(--mint); font-size: .46rem; font-weight: 500; }
+
+  .prediction-panel { align-items: stretch; display: grid; gap: .5rem; grid-template-columns: 1.1fr .9fr; margin-top: .65rem; }
+  .prediction-panel > div { background: rgba(255,255,255,.08); border-radius: .55rem; padding: .65rem; }
+  .prediction-panel small,
+  .prediction-panel strong,
+  .prediction-panel span { display: block; }
+  .prediction-panel small { color: #c9d6ce; font-family: var(--font-mono); font-size: .45rem; }
+  .prediction-panel strong { font-size: 1.3rem; margin-top: .2rem; }
+  .prediction-panel span { color: #c9d6ce; font-size: .5rem; margin-top: .2rem; }
+  .confidence div { background: rgba(255,255,255,.12); border-radius: 999px; height: .35rem; margin-top: .65rem; overflow: hidden; }
+  .confidence div i { background: var(--mint); display: block; height: 100%; width: 86%; }
+  .confidence b { color: var(--mint); display: block; font-family: var(--font-mono); font-size: .48rem; margin-top: .35rem; }
+  .model-checks { display: grid; gap: .4rem; grid-template-columns: repeat(3,1fr); margin-top: .45rem; }
+  .model-checks > div { background: var(--paper); border-radius: .45rem; color: var(--ink); padding: .42rem .5rem; }
+  .model-checks small,
+  .model-checks strong { display: block; }
+  .model-checks small { color: var(--ink-soft); font-size: .43rem; }
+  .model-checks strong { font-size: .59rem; margin-top: .18rem; }
   .partner-product { max-width: 43rem; }
 
   @media (max-width: 1050px) {
@@ -502,6 +540,8 @@ import { site } from "../config";
     .flow-step { padding: .65rem .55rem; }
     .flow-step strong { font-size: .71rem; }
     .flow-step span { font-size: .53rem; }
+    .qc-art,
+    .model-review-art { padding: .65rem; }
   }
   @media (max-width: 430px) {
     .app-side { display: none; }

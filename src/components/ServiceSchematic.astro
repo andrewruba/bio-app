@@ -1,0 +1,226 @@
+---
+import type { Service } from "../data/services";
+import { site } from "../config";
+
+interface Props { service: Service }
+const { service } = Astro.props;
+
+const footerBySlug: Record<string, string[]> = {
+  "workflow-scan": ["actual process visible", "intended use defined", "first move ranked"],
+  "app-sprint": ["scope one question", "show working software", "decide with users"],
+  "production-build": ["customer-owned", "operable", "supported"],
+  "validated-build": ["intended use", "linked evidence", "approval ready"],
+  "app-assure": ["observe", "control change", "remain ready"],
+  "app-factory": ["reuse the common layer", "specialize the science", "learn across releases"]
+};
+const footer = footerBySlug[service.slug];
+---
+
+<div class={`service-schematic schematic-${service.slug}`} data-reveal>
+  <div class="schematic-head"><span>Offer / {service.number}</span><span>{site.name}</span></div>
+  <div class="schematic-title"><span>{service.number}</span><strong>{service.name}</strong><small>{service.category}</small></div>
+
+  {service.slug === "workflow-scan" && (
+    <div class="scan-layout" aria-label="WorkflowScan maps current inputs, manual handoffs, and the best application opportunity">
+      <div class="scan-inputs"><small>Current inputs</small><span>SAS output</span><span>Spreadsheet</span><span>Email request</span></div>
+      <i aria-hidden="true">→</i>
+      <div class="scan-bottleneck"><small>Manual middle</small><strong>Reconcile, review, explain</strong><div><span>duplicate check</span><span>owner handoff</span></div></div>
+      <i aria-hidden="true">→</i>
+      <div class="scan-wedge"><small>Prioritized wedge</small><strong>One bounded application</strong><span>measurable first release</span></div>
+    </div>
+  )}
+
+  {service.slug === "app-sprint" && (
+    <div class="sprint-layout" aria-label="AppSprint turns one scientific question into working software and user evidence">
+      <div class="sprint-card"><small>Question</small><strong>Can users make the decision?</strong><span>one path · explicit boundary</span></div>
+      <i aria-hidden="true">→</i>
+      <div class="prototype-window"><div><span></span><span></span><span></span><b>Working slice</b></div><strong>Real workflow on screen</strong><p>Representative data</p><button type="button" tabindex="-1">Run scenario</button></div>
+      <i aria-hidden="true">↔</i>
+      <div class="sprint-card evidence"><small>User evidence</small><strong>Proceed, adjust, or stop</strong><span>observed use · recorded feedback</span></div>
+    </div>
+  )}
+
+  {service.slug === "production-build" && (
+    <div class="product-stack" aria-label="ProductionBuild surrounds trusted scientific logic with a usable and operable product system">
+      <div class="stack-layer user-layer"><small>01</small><strong>User workflow</strong><span>guided review</span><span>exceptions</span><span>decision state</span></div>
+      <div class="stack-layer product-layer"><small>02</small><strong>Application product</strong><span>interface</span><span>roles</span><span>workflow state</span></div>
+      <div class="stack-layer logic-layer"><small>03</small><strong>Scientific logic</strong><span>R / Python packages</span><span>tests</span></div>
+      <div class="stack-layer foundation-layer"><small>04</small><strong>Operating foundation</strong><span>identity</span><span>deploy</span><span>monitor</span><span>support</span></div>
+    </div>
+  )}
+
+  {service.slug === "validated-build" && (
+    <div class="trace-chain" aria-label="ValidatedBuild connects intended use and risk to controls, test evidence, and release approval">
+      <div><small>USE</small><strong>Claim</strong><span>intended use</span></div><i aria-hidden="true">→</i>
+      <div><small>RISK</small><strong>R-07</strong><span>failure mode</span></div><i aria-hidden="true">→</i>
+      <div><small>CTRL</small><strong>C-12</strong><span>designed control</span></div><i aria-hidden="true">→</i>
+      <div><small>TEST</small><strong>E2E-14</strong><span>passed evidence</span></div><i aria-hidden="true">→</i>
+      <div class="approved"><small>RELEASE</small><strong>Approved</strong><span>current state</span></div>
+    </div>
+  )}
+
+  {service.slug === "app-assure" && (
+    <div class="assure-layout" aria-label="AppAssure keeps a current release dependable through observation, impact assessment, controlled release, and review">
+      <div class="release-state"><small>Current state</small><strong>Release 1.8.2</strong><span class="state-pill">in service</span><dl><div><dt>Health</dt><dd>Normal</dd></div><div><dt>Evidence</dt><dd>Current</dd></div></dl></div>
+      <i aria-hidden="true">→</i>
+      <div class="change-cycle">
+        <div><small>01</small><strong>Observe</strong><span>health + change</span></div>
+        <div><small>02</small><strong>Assess</strong><span>impact + regression</span></div>
+        <div><small>04</small><strong>Review</strong><span>evidence + state</span></div>
+        <div><small>03</small><strong>Release</strong><span>approve + deploy</span></div>
+      </div>
+    </div>
+  )}
+
+  {service.slug === "app-factory" && (
+    <div class="factory-layout" aria-label="AppFactory uses one shared delivery foundation to support a portfolio of distinct scientific applications">
+      <div class="factory-apps"><div><small>APP 01</small><strong>Submission review</strong><span>Controlled</span></div><div><small>APP 02</small><strong>Lab analytics</strong><span>Validated</span></div><div><small>APP 03</small><strong>Model workspace</strong><span>Exploratory</span></div></div>
+      <div class="factory-connectors" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="factory-base"><strong>Shared application foundation</strong><span>design system</span><span>identity</span><span>assurance patterns</span><span>deployment</span></div>
+    </div>
+  )}
+
+  <div class="schematic-foot">{footer.map((item) => <span>{item}</span>)}</div>
+</div>
+
+<style>
+  .service-schematic { background: #e7ece6; border-radius: 1.1rem 1.1rem 0 0; color: var(--ink); margin-inline: auto; max-width: 58rem; min-height: 21rem; overflow: hidden; padding: 3.6rem 2rem 2.7rem; position: relative; width: 100%; }
+  .schematic-head,
+  .schematic-foot { display: flex; font-family: var(--font-mono); font-size: .62rem; justify-content: space-between; left: 2rem; letter-spacing: .08em; position: absolute; right: 2rem; text-transform: uppercase; }
+  .schematic-head { top: 1.25rem; }
+  .schematic-foot { bottom: 1.15rem; }
+  .schematic-title { align-items: baseline; display: flex; gap: .75rem; justify-content: center; text-align: center; }
+  .schematic-title > span { color: var(--teal); font-family: var(--font-mono); font-size: .65rem; }
+  .schematic-title strong { font-size: clamp(1.4rem,2.4vw,2.1rem); letter-spacing: -.04em; }
+  .schematic-title small { color: var(--ink-soft); font-family: var(--font-mono); font-size: .59rem; }
+  small { color: var(--teal); font-family: var(--font-mono); font-size: .54rem; letter-spacing: .04em; }
+
+  .scan-layout,
+  .sprint-layout { align-items: stretch; display: grid; gap: .55rem; grid-template-columns: minmax(0,.8fr) auto minmax(0,1.25fr) auto minmax(0,1fr); margin: 2rem auto 0; max-width: 49rem; }
+  .scan-layout > i,
+  .sprint-layout > i,
+  .assure-layout > i { align-self: center; color: var(--teal); font-family: var(--font-mono); font-size: .75rem; font-style: normal; }
+  .scan-inputs,
+  .scan-bottleneck,
+  .scan-wedge,
+  .sprint-card,
+  .prototype-window { background: var(--paper); border-radius: .7rem; min-height: 8.5rem; padding: .85rem; }
+  .scan-inputs small,
+  .scan-inputs span { display: block; }
+  .scan-inputs small { margin-bottom: .25rem; }
+  .scan-inputs span { border-top: 1px solid var(--line); font-size: .62rem; padding: .45rem 0; }
+  .scan-bottleneck { border: 1px dashed rgba(69,98,200,.55); }
+  .scan-bottleneck strong,
+  .scan-wedge strong,
+  .sprint-card strong { display: block; font-size: .86rem; line-height: 1.15; margin-top: 1.25rem; }
+  .scan-bottleneck > div { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: 1rem; }
+  .scan-bottleneck > div span { background: var(--accent-soft); border-radius: 999px; color: var(--accent-strong); font-size: .49rem; padding: .3rem .4rem; }
+  .scan-wedge { background: #173f31; color: var(--paper); }
+  .scan-wedge small { color: var(--mint); }
+  .scan-wedge > span,
+  .sprint-card > span { color: var(--ink-soft); display: block; font-size: .58rem; margin-top: .45rem; }
+  .scan-wedge > span { color: #c6d1ca; }
+
+  .sprint-card.evidence { background: #edf6ee; border: 1px solid rgba(37,122,87,.25); }
+  .prototype-window { box-shadow: inset 0 0 0 1px var(--line); padding: 0; }
+  .prototype-window > div { align-items: center; border-bottom: 1px solid var(--line); display: flex; gap: .22rem; padding: .55rem; }
+  .prototype-window > div span { background: var(--line-strong); border-radius: 50%; height: .3rem; width: .3rem; }
+  .prototype-window > div b { font-family: var(--font-mono); font-size: .5rem; font-weight: 500; margin-left: auto; }
+  .prototype-window > strong { display: block; font-size: .74rem; padding: .75rem .7rem 0; }
+  .prototype-window p { font-size: .52rem; margin: .2rem .7rem .6rem; }
+  .prototype-window button { background: var(--ink); border: 0; border-radius: 999px; color: var(--paper); font-family: var(--font-mono); font-size: .47rem; margin-left: .7rem; padding: .38rem .55rem; }
+
+  .product-stack { display: grid; gap: .35rem; margin: 1.55rem auto 0; max-width: 48rem; }
+  .stack-layer { align-items: center; border-radius: .55rem; display: grid; gap: .5rem; grid-template-columns: 1.6rem 1.4fr repeat(4,1fr); min-height: 2.25rem; padding: .48rem .75rem; }
+  .stack-layer strong { font-size: .72rem; }
+  .stack-layer span { font-family: var(--font-mono); font-size: .51rem; text-align: center; }
+  .user-layer { background: var(--paper); }
+  .product-layer { background: #d8e6dd; }
+  .logic-layer { background: #8fa7ff; }
+  .foundation-layer { background: #173f31; color: var(--paper); }
+  .foundation-layer small { color: var(--mint); }
+
+  .trace-chain { align-items: stretch; display: grid; gap: .4rem; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1.1fr; margin: 2.4rem auto 0; max-width: 50rem; }
+  .trace-chain > div { background: var(--paper); border-radius: .65rem; display: flex; flex-direction: column; min-height: 7.5rem; padding: .75rem; }
+  .trace-chain > i { align-self: center; color: var(--teal); font-style: normal; }
+  .trace-chain strong { font-size: .8rem; margin-top: .65rem; }
+  .trace-chain span { color: var(--ink-soft); font-size: .53rem; margin-top: auto; }
+  .trace-chain .approved { background: var(--mint); }
+
+  .assure-layout { align-items: stretch; display: grid; gap: 1rem; grid-template-columns: minmax(0,.8fr) auto minmax(0,1.3fr); margin: 1.65rem auto 0; max-width: 43rem; }
+  .release-state { background: #173f31; border-radius: .7rem; color: var(--paper); padding: .85rem; }
+  .release-state small { color: var(--mint); }
+  .release-state > strong { display: block; font-size: 1rem; margin: .7rem 0 .5rem; }
+  .state-pill { background: rgba(188,232,121,.16); border-radius: 999px; color: var(--mint); font-family: var(--font-mono); font-size: .5rem; padding: .25rem .4rem; }
+  .release-state dl { margin: .8rem 0 0; }
+  .release-state dl div { border-top: 1px solid rgba(255,255,255,.15); display: flex; font-size: .5rem; justify-content: space-between; padding-top: .4rem; }
+  .release-state dt,
+  .release-state dd { margin: 0; }
+  .change-cycle { display: grid; gap: .4rem; grid-template-columns: 1fr 1fr; }
+  .change-cycle > div { background: var(--paper); border-radius: .65rem; padding: .6rem; }
+  .change-cycle strong,
+  .change-cycle span { display: block; }
+  .change-cycle strong { font-size: .69rem; margin-top: .35rem; }
+  .change-cycle span { color: var(--ink-soft); font-size: .5rem; margin-top: .18rem; }
+  .change-cycle > div:nth-child(4) { background: #edf6ee; border: 1px solid rgba(37,122,87,.25); }
+
+  .factory-layout { margin: 1.6rem auto 0; max-width: 48rem; }
+  .factory-apps { display: grid; gap: .7rem; grid-template-columns: repeat(3,1fr); }
+  .factory-apps > div { background: var(--paper); border-radius: .65rem; min-height: 5.6rem; padding: .7rem; }
+  .factory-apps strong,
+  .factory-apps span { display: block; }
+  .factory-apps strong { font-size: .72rem; margin-top: .7rem; }
+  .factory-apps span { color: var(--teal); font-family: var(--font-mono); font-size: .49rem; margin-top: .3rem; }
+  .factory-connectors { display: grid; grid-template-columns: repeat(3,1fr); height: 1.1rem; }
+  .factory-connectors i { border-left: 1px solid var(--teal); justify-self: center; }
+  .factory-base { align-items: center; background: #173f31; border-radius: .65rem; color: var(--paper); display: grid; gap: .5rem; grid-template-columns: 1.6fr repeat(4,1fr); padding: .75rem; }
+  .factory-base strong { font-size: .7rem; }
+  .factory-base span { color: #c6d1ca; font-family: var(--font-mono); font-size: .48rem; text-align: center; }
+
+  @media (max-width: 650px) {
+    .service-schematic { min-height: 18rem; padding: 3.2rem 1rem 2.5rem; }
+    .schematic-head,
+    .schematic-foot { font-size: .52rem; left: 1rem; right: 1rem; }
+    .schematic-title { gap: .45rem; }
+    .schematic-title strong { font-size: 1.3rem; }
+    .schematic-title small { display: none; }
+    .scan-layout,
+    .sprint-layout { gap: .25rem; margin-top: 1.4rem; }
+    .scan-inputs,
+    .scan-bottleneck,
+    .scan-wedge,
+    .sprint-card,
+    .prototype-window { min-height: 6.7rem; padding: .55rem; }
+    .scan-inputs span { font-size: .49rem; padding: .3rem 0; }
+    .scan-bottleneck strong,
+    .scan-wedge strong,
+    .sprint-card strong { font-size: .66rem; margin-top: .8rem; }
+    .scan-bottleneck > div span:nth-child(2),
+    .sprint-card > span { display: none; }
+    .prototype-window { padding: 0; }
+    .prototype-window > strong { font-size: .6rem; padding: .55rem .45rem 0; }
+    .prototype-window p { display: none; }
+    .prototype-window button { font-size: .42rem; margin: .65rem 0 0 .45rem; }
+    .product-stack { margin-top: 1.15rem; }
+    .stack-layer { grid-template-columns: 1.2rem 1.5fr repeat(2,1fr); padding-inline: .5rem; }
+    .stack-layer span:nth-of-type(n+3) { display: none; }
+    .trace-chain { gap: .22rem; margin-top: 1.7rem; }
+    .trace-chain > div { min-height: 5.8rem; padding: .45rem; }
+    .trace-chain strong { font-size: .61rem; }
+    .trace-chain span { display: none; }
+    .trace-chain > i { font-size: .55rem; }
+    .assure-layout { margin-top: 1.25rem; }
+    .release-state { padding: .6rem; }
+    .release-state dl { display: none; }
+    .release-state > strong { font-size: .75rem; }
+    .change-cycle { gap: .25rem; }
+    .change-cycle > div { padding: .45rem; }
+    .change-cycle span { display: none; }
+    .factory-layout { margin-top: 1.2rem; }
+    .factory-apps { gap: .35rem; }
+    .factory-apps > div { min-height: 4.9rem; padding: .5rem; }
+    .factory-apps strong { font-size: .58rem; }
+    .factory-base { grid-template-columns: 1.5fr 1fr 1fr; padding: .55rem; }
+    .factory-base span:nth-of-type(n+3) { display: none; }
+  }
+</style>

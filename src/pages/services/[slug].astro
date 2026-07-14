@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaBand from "../../components/CtaBand.astro";
+import ServiceSchematic from "../../components/ServiceSchematic.astro";
 import { services, type Service } from "../../data/services";
-import { site } from "../../config";
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -24,18 +24,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
         <p class="hero-dek">{service.description}</p>
         <div class="hero-actions"><a class="button button-mint" href="/contact">{service.cta} <span aria-hidden="true">↗</span></a><a class="text-link light" href="#deliverables">See deliverables <span aria-hidden="true">↓</span></a></div>
       </div>
-      <div class="service-diagram" data-reveal>
-        <div class="diagram-head"><span>Offer / {service.number}</span><span>{site.name}</span></div>
-        <div class="diagram-title"><span>{service.number}</span><strong>{service.name}</strong><small>{service.category}</small></div>
-        <div class="diagram-flow" aria-label="Representative application workflow: load, process, and generate report">
-          <div><small>01</small><strong>Load</strong><span>Data + parameters</span></div>
-          <i aria-hidden="true">→</i>
-          <div><small>02</small><strong>Process</strong><span>Controlled R / Python logic</span></div>
-          <i aria-hidden="true">→</i>
-          <div class="diagram-report"><small>03</small><strong>Generate report</strong><span>Review-ready output</span></div>
-        </div>
-        <div class="diagram-foot"><span>inputs recorded</span><span>logic versioned</span><span>output traceable</span></div>
-      </div>
+      <ServiceSchematic service={service} />
     </div>
   </section>
 
