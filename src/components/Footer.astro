@@ -63,11 +63,12 @@ import { site } from "../config";
 
 <style>
   .site-footer { background: #050706; padding-top: clamp(4rem, 8vw, 7rem); }
+  .site-footer :global(.brand-type > span:last-child) { color: #b7c1bc; }
   .footer-main { gap: 4rem; grid-template-columns: 1.5fr 1fr .8fr 1.1fr; }
-  .footer-label { font-family: var(--font-mono); font-size: .64rem; font-weight: 500; }
-  li a { color: #b8c1bc; font-size: .86rem; }
+  .footer-label { font-family: var(--font-mono); font-size: .72rem; font-weight: 500; }
+  li a { color: #b8c1bc; font-size: .91rem; }
   .footer-note p { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 500; letter-spacing: -.025em; }
-  .footer-bottom { color: #8f9b94; font-family: var(--font-mono); font-size: .61rem; }
+  .footer-bottom { color: #8f9b94; font-family: var(--font-mono); font-size: .66rem; }
   @media (max-width: 800px) { .footer-main { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 520px) { .footer-main { grid-template-columns: 1fr; } }
 </style>

@@ -109,14 +109,16 @@ import { site } from "../config";
           <div class="workflow-art clinical-art" aria-hidden="true"><span class="dataset d1">ADSL</span><span class="dataset d2">ADAE</span><span class="dataset d3">TFL</span><i></i></div>
           <div class="workflow-copy"><span class="number-label">01 / Clinical & submission support</span><h3>Review and QC without the reconciliation maze.</h3><p>Clinical data review, TFL/ADaM/SDTM QC, submission readiness, biomarker review, cross-study reconciliation, and controlled reporting.</p><div class="tag-row"><span class="tag">Biometrics</span><span class="tag">Statistical programming</span><span class="tag">Data review</span></div></div>
         </article>
-        <article class="workflow-card" data-reveal>
-          <div class="workflow-art lab-art" aria-hidden="true"><div class="vial v1"></div><div class="vial v2"></div><div class="vial v3"></div><svg viewBox="0 0 300 100"><path d="M0 74 C32 61 47 88 81 65 S130 34 158 58 202 79 229 44 273 22 300 35" /></svg></div>
-          <div class="workflow-copy"><span class="number-label">02 / Laboratory & CMC</span><h3>Make methods usable beyond the scientist who wrote them.</h3><p>Assay calculations, sample reconciliation, method transfer, stability review, instrument-data aggregation, and exception workflows above systems of record.</p><div class="tag-row"><span class="tag">Analytical development</span><span class="tag">Digital labs</span></div></div>
-        </article>
-        <article class="workflow-card" data-reveal>
-          <div class="workflow-art model-art" aria-hidden="true"><span>input</span><span>model</span><span>review</span><i></i><i></i></div>
-          <div class="workflow-copy"><span class="number-label">03 / Model-enabled research</span><h3>Put advanced models inside a workflow scientists will adopt.</h3><p>Prediction tools, chemometrics, computer vision, simulation orchestration, model review, and human-approved AI capabilities.</p><div class="tag-row"><span class="tag">Discovery</span><span class="tag">ML / AI</span><span class="tag">Modeling</span></div></div>
-        </article>
+        <div class="workflow-stack">
+          <article class="workflow-card" data-reveal>
+            <div class="workflow-art lab-art" aria-hidden="true"><div class="vial v1"></div><div class="vial v2"></div><div class="vial v3"></div><svg viewBox="0 0 300 100"><path d="M0 74 C32 61 47 88 81 65 S130 34 158 58 202 79 229 44 273 22 300 35" /></svg></div>
+            <div class="workflow-copy"><span class="number-label">02 / Laboratory & CMC</span><h3>Make methods usable beyond the scientist who wrote them.</h3><p>Assay calculations, sample reconciliation, method transfer, stability review, instrument-data aggregation, and exception workflows above systems of record.</p><div class="tag-row"><span class="tag">Analytical development</span><span class="tag">Digital labs</span></div></div>
+          </article>
+          <article class="workflow-card" data-reveal>
+            <div class="workflow-art model-art" aria-hidden="true"><span>input</span><span>model</span><span>review</span><i></i><i></i></div>
+            <div class="workflow-copy"><span class="number-label">03 / Model-enabled research</span><h3>Put advanced models inside a workflow scientists will adopt.</h3><p>Prediction tools, chemometrics, computer vision, simulation orchestration, model review, and human-approved AI capabilities.</p><div class="tag-row"><span class="tag">Discovery</span><span class="tag">ML / AI</span><span class="tag">Modeling</span></div></div>
+          </article>
+        </div>
         <article class="workflow-card rescue" data-reveal>
           <div class="workflow-copy"><span class="number-label">04 / Existing app rescue</span><h3>Your useful internal app deserves a production path.</h3><p>Assess architecture and code, separate business logic, add controls and automated regression, reconstruct traceability, deploy, and establish ownership.</p><a class="text-link" href="/services/validated-build">Explore the retrofit path <span aria-hidden="true">↗</span></a></div>
         </article>
@@ -514,5 +516,83 @@ import { site } from "../config";
   }
   @media (max-width: 430px) {
     .proof-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<style>
+  /* Legibility and density refinement after full-page render review. */
+  .hero { padding-top: clamp(4.5rem,7vw,6.5rem); }
+  .hero-grid { gap: clamp(3.5rem,5.5vw,5rem); }
+  .hero-note { font-size: .78rem; }
+  .visual-topline,
+  .visual-caption { font-size: .68rem; }
+  .app-side { font-size: .63rem; }
+  .app-heading small { font-size: .56rem; }
+  .app-heading > span { font-size: .62rem; }
+  .metrics small { font-size: .58rem; }
+  .plot-label { font-size: .6rem; }
+  .trace-row { font-size: .58rem; }
+
+  .proof-grid div { min-height: 7rem; padding-block: 1.7rem; }
+  .proof-grid strong { font-size: 1.25rem; }
+  .proof-grid span { font-size: .84rem; }
+
+  .problem-grid { gap: clamp(3rem,6vw,7rem); }
+  .friction-list { margin-top: 2.25rem; }
+  .friction-list span { font-size: .88rem; min-height: 5rem; }
+  .friction-list b { font-size: .7rem; }
+
+  .life-card { min-height: 21rem; }
+  .life-card h3 { margin-top: 2.5rem; }
+  .life-card p { font-size: .92rem; line-height: 1.55; }
+  .life-number { font-size: .74rem; }
+  .life-phase { font-size: .67rem; padding-bottom: 1rem; }
+  .life-link { font-size: .76rem; }
+
+  .workflow-grid { align-items: start; grid-template-columns: 1.15fr 1fr 1fr; }
+  .workflow-stack { display: contents; }
+  .workflow-card { grid-template-rows: 14rem auto; }
+  .workflow-card.featured { grid-row: auto; grid-template-rows: 16rem auto; }
+  .workflow-card.rescue { grid-column: 1 / -1; }
+  .workflow-copy p { font-size: .96rem; }
+
+  .assurance-grid { gap: clamp(3rem,6vw,6rem); }
+  .assurance-levels article { min-height: 27rem; }
+  .assurance-levels h3 { margin-top: 3rem; }
+  .assurance-levels p { font-size: .9rem; }
+  .assurance-levels li { font-size: .8rem; }
+  .assurance-levels article > span { font-size: .71rem; }
+
+  .method-track li { min-height: 10.5rem; }
+  .method-track strong { margin-top: 2.5rem; }
+  .method-track small { font-size: .7rem; line-height: 1.4; }
+  .method-track span,
+  .method-principles span { font-size: .72rem; }
+  .method-principles { margin-top: 3.5rem; }
+  .method-principles h3 { margin-top: 1.5rem; }
+  .method-principles p { font-size: .92rem; }
+
+  .partner-grid { gap: clamp(3rem,6vw,6rem); }
+  .partner-label { font-size: .68rem; }
+  .partner-proof span { font-size: .81rem; }
+
+  .fit li { font-size: .9rem; line-height: 1.5; }
+
+  @media (max-width: 1000px) {
+    .workflow-grid { grid-template-columns: 1fr 1fr; }
+    .workflow-stack { display: contents; }
+    .workflow-card.featured,
+    .workflow-card { grid-template-rows: 16rem auto; }
+  }
+  @media (max-width: 720px) {
+    .hero { padding-top: 3.75rem; }
+    .hero-grid { gap: 3rem; }
+    .workflow-grid { grid-template-columns: 1fr; }
+    .workflow-stack { display: grid; }
+    .workflow-card.featured,
+    .workflow-card { grid-template-rows: 15rem auto; }
+    .workflow-card.rescue { grid-column: auto; }
+    .assurance-levels article { min-height: 21rem; }
+    .method-track li { min-height: 9.5rem; }
   }
 </style>
