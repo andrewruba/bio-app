@@ -12,7 +12,9 @@
   --teal-bright: #329c70;
   --mint: #bce879;
   --mint-dark: #78a641;
-  --coral: #ff684a;
+  --accent: #8fa7ff;
+  --accent-strong: #4562c8;
+  --accent-soft: #edf0ff;
   --white-soft: #c7d0cb;
   --line: rgba(8, 11, 9, 0.13);
   --line-strong: rgba(8, 11, 9, 0.28);
@@ -97,10 +99,11 @@ a { color: inherit; }
 .button-outline:hover { color: var(--paper); }
 .button-mint { background: var(--mint); border-color: var(--mint); color: var(--ink); }
 .button-mint:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
-.button-coral { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+.button-accent { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+.button-accent:hover { background: var(--mint); border-color: var(--mint); color: var(--ink); }
 
 .text-link { align-items: center; border-bottom: 1px solid currentColor; color: var(--teal); display: inline-flex; font-family: var(--font-mono); font-size: .75rem; font-weight: 500; gap: 1.2rem; letter-spacing: .04em; padding-bottom: .25rem; text-decoration: none; text-transform: uppercase; }
-.text-link:hover { color: var(--coral); }
+.text-link:hover { color: var(--accent-strong); }
 .text-link.light { color: var(--mint); }
 
 .section-heading { align-items: end; display: grid; gap: clamp(2rem, 8vw, 8rem); grid-template-columns: 1fr 1fr; margin-bottom: clamp(3.5rem, 7vw, 6rem); }

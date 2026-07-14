@@ -94,7 +94,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   .diagram-head, .diagram-foot { display: flex; font-size: 0.58rem; justify-content: space-between; left: 1rem; letter-spacing: 0.1em; position: absolute; right: 1rem; text-transform: uppercase; z-index: 2; }
   .diagram-head { top: 1rem; }.diagram-foot { bottom: 1rem; }
   .diagram-center { align-items: center; display: flex; flex-direction: column; position: relative; text-align: center; z-index: 3; }
-  .diagram-number { color: var(--coral); font-size: 0.68rem; font-weight: 800; }
+  .diagram-number { color: var(--accent-strong); font-size: 0.68rem; font-weight: 800; }
   .diagram-center strong { font-family: var(--font-serif); font-size: clamp(1.65rem, 3vw, 2.8rem); font-weight: 500; line-height: .95; margin: 0.4rem 0; max-width: 70%; overflow-wrap: anywhere; }
   .diagram-center small { color: var(--ink-soft); font-size: 0.6rem; }
   .diagram-orbit { border: 1px solid var(--line-strong); border-radius: 50%; position: absolute; }
@@ -108,7 +108,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   .outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
   .outcome-grid article { border: 1px solid var(--line); min-height: 23rem; padding: clamp(1.5rem, 3vw, 2.7rem); }
   .outcome-grid article + article { border-left: 0; }
-  .outcome-grid span { color: var(--coral); font-size: 0.7rem; font-weight: 800; }
+  .outcome-grid span { color: var(--accent-strong); font-size: 0.7rem; font-weight: 800; }
   .outcome-grid h3 { margin: 5rem 0 1rem; max-width: 10ch; }
   .outcome-grid p { font-size: 0.86rem; }
   .deliverables { background: var(--teal); color: var(--paper); }
@@ -130,7 +130,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   .fit-grid h2 { margin: 1.2rem 0 0; max-width: 12ch; }
   .fit-grid ul { list-style: none; margin: 0; padding: 0; }
   .fit-grid li { border-top: 1px solid var(--line-strong); color: var(--ink); font-family: var(--font-serif); font-size: clamp(1.05rem, 1.8vw, 1.45rem); padding: 1.2rem 1rem 1.2rem 3rem; position: relative; }
-  .fit-grid li::before { color: var(--coral); content: "→"; left: 0; position: absolute; }
+  .fit-grid li::before { color: var(--accent-strong); content: "→"; left: 0; position: absolute; }
   .assurance-note { background: var(--wash); }
   .note-grid { align-items: start; display: grid; gap: 2rem; grid-template-columns: auto 1fr; }
   .note-mark { border: 1px solid var(--teal); border-radius: 50%; display: grid; font-family: var(--font-serif); font-size: 2rem; height: 5rem; place-items: center; width: 5rem; }

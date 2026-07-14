@@ -194,10 +194,10 @@ import { site } from "../config";
   .hero-dek { font-size: clamp(1.05rem, 1.5vw, 1.3rem); max-width: 42rem; }
   .hero-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2.4rem; }
   .hero-note { align-items: center; display: flex; font-size: 0.72rem; font-weight: 700; gap: 0.5rem; margin: 3rem 0 0; }
-  .hero-note span { color: var(--coral); }
+  .hero-note span { color: var(--accent-strong); }
 
   .hero-visual { background: var(--ink); box-shadow: var(--shadow-lg); color: var(--paper); padding: 0.85rem; position: relative; transform: rotate(1.3deg); }
-  .hero-visual::before { border: 1px solid var(--coral); content: ""; height: 96%; left: -1.5rem; position: absolute; top: 3rem; width: 100%; z-index: -1; }
+  .hero-visual::before { border: 1px solid var(--accent); content: ""; height: 96%; left: -1.5rem; position: absolute; top: 3rem; width: 100%; z-index: -1; }
   .visual-topline, .visual-caption { align-items: center; display: flex; font-size: 0.62rem; justify-content: space-between; letter-spacing: 0.08em; padding: 0.15rem 0.25rem 0.75rem; text-transform: uppercase; }
   .live-dot { align-items: center; display: flex; gap: 0.4rem; }
   .live-dot::before { background: var(--mint); border-radius: 50%; content: ""; height: 0.45rem; width: 0.45rem; }
@@ -224,7 +224,7 @@ import { site } from "../config";
   .grid-lines { fill: none; opacity: 0.2; stroke: var(--ink); stroke-width: 1; }
   .band { fill: #b9ded7; opacity: 0.7; }
   .curve { fill: none; stroke: var(--teal); stroke-width: 3; }
-  .points { fill: var(--coral); stroke: #fff; stroke-width: 2; }
+  .points { fill: var(--accent-strong); stroke: #fff; stroke-width: 2; }
   .trace-row { align-items: center; background: var(--wash); display: grid; font-size: 0.47rem; grid-template-columns: 1.4fr 0.8fr 1.2fr auto; margin-top: 0.6rem; padding: 0.7rem; }
   .trace-row i { background: var(--teal-bright); border-radius: 50%; display: inline-block; height: 0.4rem; margin-right: 0.2rem; width: 0.4rem; }
   .trace-check { background: var(--mint); border-radius: 50%; display: grid; height: 1.4rem; place-items: center; width: 1.4rem; }
@@ -243,7 +243,7 @@ import { site } from "../config";
   .problem-body .lead { color: var(--ink); font-family: var(--font-serif); font-size: clamp(1.4rem, 2vw, 2rem); line-height: 1.35; }
   .friction-list { border-top: 1px solid var(--line-strong); display: grid; margin-top: 3rem; }
   .friction-list span { border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.8rem; padding: 1rem 0; }
-  .friction-list b { color: var(--coral); display: inline-block; font-size: 0.65rem; margin-right: 1rem; }
+  .friction-list b { color: var(--accent); display: inline-block; font-size: 0.65rem; margin-right: 1rem; }
 
   .lifecycle { background: var(--wash-blue); border-top: 1px solid var(--line); }
   .lifecycle-track { display: grid; grid-template-columns: repeat(7, minmax(15rem, 1fr)); overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory; }
@@ -263,7 +263,7 @@ import { site } from "../config";
   .workflow-grid { display: grid; gap: 1rem; grid-template-columns: 1.25fr 0.75fr; }
   .workflow-card { background: #fffdf8; border: 1px solid var(--line); display: grid; grid-template-rows: 15rem 1fr; }
   .workflow-card.featured { grid-row: span 2; grid-template-rows: 25rem 1fr; }
-  .workflow-card.rescue { background: var(--coral); display: block; grid-column: 1 / -1; }
+  .workflow-card.rescue { background: var(--accent); display: block; grid-column: 1 / -1; }
   .workflow-copy { padding: clamp(1.5rem, 3vw, 2.8rem); }
   .workflow-copy h3 { margin: 1.1rem 0; max-width: 16ch; }
   .workflow-copy p { font-size: 0.9rem; }
@@ -277,7 +277,7 @@ import { site } from "../config";
   .vial::before { background: var(--ink); content: ""; height: 0.65rem; left: -0.25rem; position: absolute; top: -0.5rem; width: 3.3rem; }
   .v1 { left: 20%; }.v2 { left: 44%; height: 7rem; }.v3 { left: 68%; height: 4.5rem; }
   .lab-art svg { bottom: 0; position: absolute; width: 100%; }
-  .lab-art path { fill: none; stroke: var(--coral); stroke-width: 3; }
+  .lab-art path { fill: none; stroke: var(--accent-strong); stroke-width: 3; }
   .model-art { align-items: center; background: var(--ink); display: flex; gap: 1.8rem; justify-content: center; }
   .model-art span { background: var(--paper); border-radius: 50%; display: grid; font-size: 0.62rem; height: 3.8rem; place-items: center; width: 3.8rem; }
   .model-art i { background: var(--mint); height: 1px; position: absolute; width: 2rem; }
@@ -303,20 +303,20 @@ import { site } from "../config";
   .method-track { display: grid; grid-template-columns: repeat(6, 1fr); list-style: none; margin: 0; padding: 0; }
   .method-track li { border-bottom: 1px solid var(--line-strong); border-top: 1px solid var(--line-strong); min-height: 12rem; padding: 1rem; position: relative; }
   .method-track li + li { border-left: 1px solid var(--line); }
-  .method-track li::after { background: var(--coral); border-radius: 50%; bottom: -0.3rem; content: ""; height: 0.55rem; left: 50%; position: absolute; width: 0.55rem; }
+  .method-track li::after { background: var(--accent); border-radius: 50%; bottom: -0.3rem; content: ""; height: 0.55rem; left: 50%; position: absolute; width: 0.55rem; }
   .method-track span, .method-track strong, .method-track small { display: block; }
   .method-track span { color: var(--teal); font-size: 0.65rem; }
   .method-track strong { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; margin-top: 3rem; }
   .method-track small { color: var(--ink-soft); font-size: 0.58rem; margin-top: 0.4rem; }
   .method-principles { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin-top: 5rem; }
   .method-principles div { background: var(--paper); padding: 2rem; }
-  .method-principles span { color: var(--coral); font-size: 0.65rem; font-weight: 800; }
+  .method-principles span { color: var(--accent-strong); font-size: 0.65rem; font-weight: 800; }
   .method-principles h3 { font-size: 1.7rem; margin: 2rem 0 1rem; }
   .method-principles p { font-size: 0.82rem; }
 
   .partner { background: var(--wash); }
   .partner-grid { align-items: center; display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 0.8fr 1.2fr; }
-  .partner-graphic { aspect-ratio: 4/5; background: var(--teal); box-shadow: 1.5rem 1.5rem 0 var(--coral); color: var(--paper); display: grid; overflow: hidden; place-items: center; position: relative; }
+  .partner-graphic { aspect-ratio: 4/5; background: var(--teal); box-shadow: 1.5rem 1.5rem 0 var(--accent); color: var(--paper); display: grid; overflow: hidden; place-items: center; position: relative; }
   .partner-grid-lines { background-image: linear-gradient(rgba(255,255,255,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.12) 1px,transparent 1px); background-size: 2.5rem 2.5rem; inset: 0; position: absolute; }
   .partner-initial { border: 1px solid var(--mint); border-radius: 50%; display: grid; font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 8rem); height: 65%; place-items: center; width: 80%; z-index: 1; }
   .partner-label { bottom: 1rem; font-size: 0.62rem; letter-spacing: 0.1em; position: absolute; text-transform: uppercase; }
@@ -332,7 +332,7 @@ import { site } from "../config";
   .fit h3 { border-bottom: 1px solid var(--line-strong); font-family: var(--font-sans); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; padding-bottom: 1rem; text-transform: uppercase; }
   .fit ul { list-style: none; margin: 0; padding: 0; }
   .fit li { border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.8rem; line-height: 1.4; padding: 0.8rem 0 0.8rem 1.3rem; position: relative; }
-  .fit li::before { color: var(--coral); content: "→"; left: 0; position: absolute; }
+  .fit li::before { color: var(--accent-strong); content: "→"; left: 0; position: absolute; }
 
   @media (max-width: 1000px) {
     .hero-grid, .problem-grid, .assurance-grid, .partner-grid { grid-template-columns: 1fr; }
@@ -448,7 +448,7 @@ import { site } from "../config";
   .workflows { background: var(--paper-deep); }
   .workflow-grid { gap: 1.2rem; }
   .workflow-card { background: var(--paper); border: 0; border-radius: var(--radius); overflow: hidden; }
-  .workflow-card.rescue { background: var(--coral); border-radius: var(--radius); }
+  .workflow-card.rescue { background: var(--accent); border-radius: var(--radius); }
   .workflow-art { border: 0; }
   .dataset { border: 0; border-radius: .6rem; box-shadow: 0 10px 35px rgba(0,0,0,.17); }
   .workflow-copy { padding: clamp(1.75rem,3vw,3rem); }
