@@ -40,7 +40,7 @@ import { site } from "../config";
 <style>
   .site-footer { background: var(--ink); color: var(--white-soft); padding-top: clamp(4rem, 8vw, 7rem); }
   .footer-main { display: grid; gap: 3rem; grid-template-columns: 1.6fr 1fr 0.8fr 1.15fr; }
-  .footer-intro :global(.brand) { color: var(--paper); }
+  .footer-intro :global(.brand) { --brand-mark: var(--mint); --brand-proof: #050706; color: var(--paper); }
   .footer-intro p { color: var(--white-soft); max-width: 18rem; }
   .footer-label { color: var(--mint); display: block; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.13em; margin-bottom: 1.2rem; text-transform: uppercase; }
   ul { list-style: none; margin: 0; padding: 0; }
@@ -63,7 +63,6 @@ import { site } from "../config";
 
 <style>
   .site-footer { background: #050706; padding-top: clamp(4rem, 8vw, 7rem); }
-  .site-footer :global(.brand-type > span:last-child) { color: #b7c1bc; }
   .footer-main { gap: 4rem; grid-template-columns: 1.5fr 1fr .8fr 1.1fr; }
   .footer-label { font-family: var(--font-mono); font-size: .72rem; font-weight: 500; }
   li a { color: #b8c1bc; font-size: .91rem; }

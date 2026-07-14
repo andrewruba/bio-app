@@ -223,9 +223,7 @@ const isServices = currentPath.startsWith("/services/");
   }
 
   .nav-shell { height: 5rem; }
-  .site-header :global(.brand) { color: #fff; }
-  .site-header :global(.brand-type > span:last-child) { color: #b7c1bc; }
-  .site-header :global(.brand-mark) { fill: #050706; stroke: var(--mint); }
+  .site-header :global(.brand) { --brand-mark: var(--mint); --brand-proof: #050706; color: #fff; }
 
   .primary-nav > a,
   summary {
