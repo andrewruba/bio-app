@@ -1,4 +1,6 @@
 ---
+import Icon from "./Icon.astro";
+
 interface Props {
   eyebrow?: string;
   title?: string;
@@ -22,7 +24,7 @@ const {
     </div>
     <div>
       <p>{text}</p>
-      <a class="button button-mint" href="/contact">{label}<span aria-hidden="true">↗</span></a>
+      <a class="button button-mint" href="/contact">{label}<Icon name="arrow-up-right" /></a>
     </div>
   </div>
 </section>

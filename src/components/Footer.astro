@@ -1,5 +1,6 @@
 ---
 import BrandMark from "./BrandMark.astro";
+import Icon from "./Icon.astro";
 import { services } from "../data/services";
 import { site } from "../config";
 ---
@@ -9,7 +10,7 @@ import { site } from "../config";
     <div class="footer-intro">
       <a href="/" aria-label={`${site.name} home`}><BrandMark /></a>
       <p>R and Python application development for life sciences.</p>
-      <a class="text-link light" href={`mailto:${site.email}`}>{site.email}<span aria-hidden="true">↗</span></a>
+      <a class="text-link light" href={`mailto:${site.email}`}>{site.email}<Icon name="arrow-up-right" /></a>
     </div>
     <div>
       <span class="footer-label">Lifecycle</span>

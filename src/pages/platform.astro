@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CtaBand from "../components/CtaBand.astro";
 import EvidenceWorkspace from "../components/EvidenceWorkspace.astro";
+import Icon from "../components/Icon.astro";
 import { site } from "../config";
 ---
 
@@ -13,7 +14,7 @@ import { site } from "../config";
         <span class="eyebrow mint">ControlPlane</span>
         <h1>Reuse the system behind every application.</h1>
         <p>Every application improves a shared set of templates, controls, tests, validation records, and release automation. Once those parts are proven across a portfolio, customer and partner developers can use them too.</p>
-        <a class="button button-mint" href="/contact">Discuss the platform path <span aria-hidden="true">↗</span></a>
+        <a class="button button-mint" href="/contact">Discuss the platform path <Icon name="arrow-up-right" /></a>
       </div>
       <div class="evidence-graph" data-reveal aria-label="Traceability chain connecting a requirement to an approved release">
         <span class="graph-label">traceability chain / release 1.8.2</span>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CtaBand from "../../components/CtaBand.astro";
+import Icon from "../../components/Icon.astro";
 import ServiceSchematic from "../../components/ServiceSchematic.astro";
 import { services, type Service } from "../../data/services";
 
@@ -22,7 +23,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
         <div class="service-meta"><span>{service.number} / 06</span><span>{service.category}</span></div>
         <h1>{service.headline}</h1>
         <p class="hero-dek">{service.description}</p>
-        <div class="hero-actions"><a class="button button-mint" href="/contact">{service.cta} <span aria-hidden="true">↗</span></a><a class="text-link light" href="#deliverables">See deliverables <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-actions"><a class="button button-mint" href="/contact">{service.cta} <Icon name="arrow-up-right" /></a><a class="text-link light" href="#deliverables">See deliverables <Icon name="arrow-down" /></a></div>
       </div>
       <ServiceSchematic service={service} />
     </div>
@@ -70,8 +71,8 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   </section>
 
   <nav class="service-pagination wrap" aria-label="Adjacent services">
-    {previous ? <a href={`/services/${previous.slug}`}><small>Previous offer</small><span>← {previous.name}</span></a> : <span></span>}
-    {next ? <a class="next" href={`/services/${next.slug}`}><small>Next offer</small><span>{next.name} →</span></a> : <a class="next" href="/platform"><small>Next offer</small><span>ControlPlane →</span></a>}
+    {previous ? <a href={`/services/${previous.slug}`}><small>Previous offer</small><span class="pagination-label"><Icon name="arrow-left" />{previous.name}</span></a> : <span></span>}
+    {next ? <a class="next" href={`/services/${next.slug}`}><small>Next offer</small><span class="pagination-label">{next.name}<Icon name="arrow-right" /></span></a> : <a class="next" href="/platform"><small>Next offer</small><span class="pagination-label">ControlPlane<Icon name="arrow-right" /></span></a>}
   </nav>
 
   <CtaBand eyebrow={`Offer ${service.number} / ${service.name}`} title={service.headline} label={service.cta} />
@@ -134,7 +135,9 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   .service-pagination small, .service-pagination span { display: block; }
   .service-pagination small { color: var(--ink-soft); font-size: 0.58rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; text-transform: uppercase; }
   .service-pagination span { font-family: var(--font-serif); font-size: 1.2rem; }
+  .service-pagination .pagination-label { align-items: center; display: flex; gap: .55rem; }
   .service-pagination .next { text-align: right; }
+  .service-pagination .next .pagination-label { justify-content: flex-end; }
   @media (max-width: 900px) { .service-hero-grid, .two-col, .deliverable-grid, .fit-grid { grid-template-columns: 1fr; }.service-diagram { max-width: 38rem; }.step-grid { grid-template-columns: 1fr 1fr; }.step-grid li:nth-child(3) { border-left: 0; } }
   @media (max-width: 650px) { .outcome-grid, .step-grid { grid-template-columns: 1fr; }.outcome-grid article + article, .step-grid li + li { border-left: 1px solid var(--line); border-top: 0; }.service-pagination span { font-size: 0.95rem; }.note-grid { grid-template-columns: 1fr; } }
 </style>

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CtaBand from "../components/CtaBand.astro";
 import EvidenceWorkspace from "../components/EvidenceWorkspace.astro";
+import Icon from "../components/Icon.astro";
 import { services } from "../data/services";
 import { site } from "../config";
 ---
@@ -46,8 +47,8 @@ import { site } from "../config";
         <h1>Turn critical scientific workflows into applications teams can trust.</h1>
         <p class="hero-dek">We turn spreadsheets, SAS scripts, and manual analyses into production R and Python applications—designed around the people doing the work, validated when required, and supported after release.</p>
         <div class="hero-actions">
-          <a class="button" href="/contact">Discuss a workflow <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="#lifecycle">See the application lifecycle <span aria-hidden="true">↓</span></a>
+          <a class="button" href="/contact">Discuss a workflow <Icon name="arrow-up-right" /></a>
+          <a class="text-link" href="#lifecycle">See the application lifecycle <Icon name="arrow-down" /></a>
         </div>
         <p class="hero-note"><span>✦</span> AI-accelerated delivery. Human-accountable releases.</p>
       </div>
@@ -139,14 +140,14 @@ import { site } from "../config";
             <span class="life-phase">{index < 2 ? "Prove" : index < 4 ? "Build" : index === 4 ? "Operate" : "Scale"}</span>
             <h3>{service.name}</h3>
             <p>{service.description}</p>
-            <span class="life-link">Explore <b aria-hidden="true">↗</b></span>
+            <span class="life-link">Explore <Icon name="arrow-up-right" /></span>
           </a>
         ))}
         <a href="/platform" class="life-card platform-card">
           <span class="life-number">07</span><span class="life-phase">Platform</span>
           <h3>ControlPlane</h3>
           <p>Reuse approved templates, controls, tests, and release records across customer and partner development teams.</p>
-          <span class="life-link">See the direction <b aria-hidden="true">↗</b></span>
+          <span class="life-link">See the direction <Icon name="arrow-up-right" /></span>
         </a>
       </div>
     </div>
@@ -199,7 +200,7 @@ import { site } from "../config";
           </article>
         </div>
         <article class="workflow-card rescue" data-reveal>
-          <div class="workflow-copy"><span class="number-label">04 / Existing app rescue</span><h3>A useful internal app should not stay stuck on a laptop or shared server.</h3><p>Review the code, separate calculations from the interface, add automated tests and access controls, document requirements and risks, deploy, and establish support ownership.</p><a class="text-link" href="/services/validated-build">Explore the upgrade path <span aria-hidden="true">↗</span></a></div>
+          <div class="workflow-copy"><span class="number-label">04 / Existing app rescue</span><h3>A useful internal app should not stay stuck on a laptop or shared server.</h3><p>Review the code, separate calculations from the interface, add automated tests and access controls, document requirements and risks, deploy, and establish support ownership.</p><a class="text-link" href="/services/validated-build">Explore the upgrade path <Icon name="arrow-up-right" /></a></div>
         </article>
       </div>
     </div>
@@ -211,7 +212,7 @@ import { site } from "../config";
         <span class="eyebrow mint">Controls follow intended use</span>
         <h2>Apply the controls the application actually needs.</h2>
         <p>Not every application requires the same validation effort. Define intended use first, then match the engineering, testing, documentation, and approvals to the risk.</p>
-        <a class="text-link light" href="/services/validated-build">See ValidatedBuild <span aria-hidden="true">↗</span></a>
+        <a class="text-link light" href="/services/validated-build">See ValidatedBuild <Icon name="arrow-up-right" /></a>
       </div>
       <div class="assurance-levels" data-reveal>
         <article><span>Level 01</span><h3>Exploratory</h3><p>Research, visualization, hypothesis generation, and non-regulated internal analysis.</p><ul><li>Controlled source</li><li>Automated tests</li><li>Deployment record</li><li>User documentation</li></ul></article>
@@ -248,7 +249,7 @@ import { site } from "../config";
         <p class="lead">{site.name} handles the full application lifecycle: understand the current process, build and test the application, prepare validation evidence, deploy it, and support each release.</p>
         <p>A useful analysis does not become a dependable application by adding an interface alone. User adoption, testing, traceability, release controls, infrastructure, and support ownership must be designed together.</p>
         <div class="partner-proof"><span><b>Discover</b> the current process</span><span><b>Build</b> the production application</span><span><b>Validate</b> based on intended use</span><span><b>Support</b> each controlled change</span></div>
-        <a class="button button-outline" href="/about">How {site.name} works <span aria-hidden="true">↗</span></a>
+        <a class="button button-outline" href="/about">How {site.name} works <Icon name="arrow-up-right" /></a>
       </div>
     </div>
   </section>

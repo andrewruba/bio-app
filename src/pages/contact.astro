@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
 import { site } from "../config";
 ---
 
@@ -11,7 +12,7 @@ import { site } from "../config";
         <h1>What work should be easier than it is?</h1>
         <p>Bring one recurring analysis or review process, the people doing it, and the study, submission, or laboratory milestone it affects. The first conversation is about finding the smallest practical next step—not forcing a platform sale.</p>
         <div class="expect"><span>In 30 minutes, we’ll cover</span><ul><li>The current steps and expected result</li><li>Users, data sources, systems, and manual handoffs</li><li>Intended use and likely validation requirements</li><li>The smallest practical discovery, prototype, or build step</li></ul></div>
-        <a class="email-link" href={`mailto:${site.email}`}>{site.email}<span>↗</span></a>
+        <a class="email-link" href={`mailto:${site.email}`}>{site.email}<Icon name="arrow-up-right" /></a>
       </div>
       <form class="contact-form" id="contact-form" data-email={site.email} data-reveal>
         <div class="form-head"><span>Workflow brief</span><span>01 — 05</span></div>
@@ -20,7 +21,7 @@ import { site } from "../config";
         <label><span>Organization</span><input name="organization" autocomplete="organization" /></label>
         <label><span>What analysis or review process needs improvement?</span><textarea name="workflow" rows="5" required placeholder="Today we use… The people involved are… The slow or error-prone step is…"></textarea></label>
         <label><span>What makes it important now?</span><select name="trigger"><option value="">Select a trigger</option><option>Study or submission milestone</option><option>Laboratory or CMC program</option><option>Manual errors or turnaround time</option><option>Existing app needs deployment or support</option><option>Validation or QA requirement</option><option>Application backlog</option><option>Other</option></select></label>
-        <button class="button button-accent" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+        <button class="button button-accent" type="submit">Prepare email <Icon name="arrow-up-right" /></button>
         <p class="form-note">This launch version opens the completed brief in your email client. It does not send or store form data on the website.</p>
       </form>
     </div>

@@ -1,5 +1,6 @@
 ---
 import BrandMark from "./BrandMark.astro";
+import Icon from "./Icon.astro";
 import { services } from "../data/services";
 import { site } from "../config";
 
@@ -20,7 +21,7 @@ const isServices = currentPath.startsWith("/services/");
     </button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
       <details class="services-menu" open={false}>
-        <summary class:list={[{ active: isServices }]}>Services <span aria-hidden="true">⌄</span></summary>
+        <summary class:list={[{ active: isServices }]}>Services <Icon name="chevron-down" /></summary>
         <div class="service-popover">
           <div class="popover-intro">
             <span class="mini-label">The application lifecycle</span>
@@ -32,17 +33,17 @@ const isServices = currentPath.startsWith("/services/");
                 <a href={`/services/${service.slug}`} class:list={[{ active: currentPath === `/services/${service.slug}` }]}>
                   <span>{service.number}</span>
                   <span><strong>{service.name}</strong><small>{service.navName}</small></span>
-                  <span aria-hidden="true">↗</span>
+                  <Icon name="arrow-up-right" />
                 </a>
               </li>
             ))}
           </ol>
-          <a class="platform-link" href="/platform"><span>07</span><span><strong>ControlPlane</strong><small>Shared delivery and validation infrastructure</small></span><span aria-hidden="true">↗</span></a>
+          <a class="platform-link" href="/platform"><span>07</span><span><strong>ControlPlane</strong><small>Shared delivery and validation infrastructure</small></span><Icon name="arrow-up-right" /></a>
         </div>
       </details>
       <a class:list={[{ active: currentPath === "/platform" }]} href="/platform">Platform</a>
       <a class:list={[{ active: currentPath === "/about" }]} href="/about">About</a>
-      <a class="button button-small" href="/contact">{site.consultationLabel}<span aria-hidden="true">↗</span></a>
+      <a class="button button-small" href="/contact">{site.consultationLabel}<Icon name="arrow-up-right" /></a>
     </nav>
   </div>
 </header>
@@ -101,8 +102,10 @@ const isServices = currentPath.startsWith("/services/");
     text-decoration: none;
   }
 
+  summary { align-items: center; display: inline-flex; gap: .45rem; }
   summary::-webkit-details-marker { display: none; }
-  summary span { color: var(--mint-dark); margin-left: 0.25rem; }
+  summary :global(.ui-icon) { color: var(--mint-dark); transition: transform 160ms ease; }
+  details[open] summary :global(.ui-icon) { transform: rotate(180deg); }
   .primary-nav > a:not(.button):hover,
   summary:hover,
   .active { color: var(--teal); }
@@ -196,7 +199,7 @@ const isServices = currentPath.startsWith("/services/");
     }
     .primary-nav.is-open { display: flex; }
     .primary-nav > a,
-    summary { border-bottom: 1px solid var(--line); font-size: 1rem; padding: 1rem 0; }
+    summary { border-bottom: 1px solid var(--line); display: flex; font-size: 1rem; justify-content: space-between; padding: 1rem 0; width: 100%; }
     .primary-nav .button { margin-top: 1rem; text-align: center; }
     .service-popover {
       border: 0;
@@ -234,7 +237,7 @@ const isServices = currentPath.startsWith("/services/");
   .primary-nav > a:not(.button):hover,
   summary:hover,
   .active { color: #fff; }
-  summary span { color: var(--mint); }
+  summary :global(.ui-icon) { color: var(--mint); }
   .primary-nav > .button { background: var(--accent); border-color: var(--accent); color: var(--ink); }
   .primary-nav > .button:hover { background: var(--mint); border-color: var(--mint); }
 
