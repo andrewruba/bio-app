@@ -6,10 +6,10 @@ interface Props { service: Service }
 const { service } = Astro.props;
 
 const footerBySlug: Record<string, string[]> = {
-  "workflow-scan": ["actual process visible", "intended use defined", "first move ranked"],
+  "workflow-scan": ["current process mapped", "validation scope defined", "first application selected"],
   "app-sprint": ["scope one question", "show working software", "decide with users"],
   "production-build": ["customer-owned", "operable", "supported"],
-  "validated-build": ["intended use", "linked evidence", "approval ready"],
+  "validated-build": ["intended use", "requirements and tests linked", "release ready for approval"],
   "app-assure": ["observe", "control change", "remain ready"],
   "app-factory": ["reuse the common layer", "specialize the science", "learn across releases"]
 };
@@ -26,7 +26,7 @@ const footer = footerBySlug[service.slug];
       <i aria-hidden="true">→</i>
       <div class="scan-bottleneck"><small>Manual middle</small><strong>Reconcile, review, explain</strong><div><span>duplicate check</span><span>owner handoff</span></div></div>
       <i aria-hidden="true">→</i>
-      <div class="scan-wedge"><small>Prioritized wedge</small><strong>One bounded application</strong><span>measurable first release</span></div>
+      <div class="scan-wedge"><small>Recommended first app</small><strong>One focused application</strong><span>measurable first release</span></div>
     </div>
   )}
 
@@ -34,16 +34,16 @@ const footer = footerBySlug[service.slug];
     <div class="sprint-layout" aria-label="AppSprint turns one scientific question into working software and user evidence">
       <div class="sprint-card"><small>Question</small><strong>Can users make the decision?</strong><span>one path · explicit boundary</span></div>
       <i aria-hidden="true">→</i>
-      <div class="prototype-window"><div><span></span><span></span><span></span><b>Working slice</b></div><strong>Real workflow on screen</strong><p>Representative data</p><button type="button" tabindex="-1">Run scenario</button></div>
+      <div class="prototype-window"><div><span></span><span></span><span></span><b>Working prototype</b></div><strong>Real user task on screen</strong><p>Representative data</p><button type="button" tabindex="-1">Run scenario</button></div>
       <i aria-hidden="true">↔</i>
-      <div class="sprint-card evidence"><small>User evidence</small><strong>Proceed, adjust, or stop</strong><span>observed use · recorded feedback</span></div>
+      <div class="sprint-card evidence"><small>User feedback</small><strong>Proceed, adjust, or stop</strong><span>observed use · recorded feedback</span></div>
     </div>
   )}
 
   {service.slug === "production-build" && (
     <div class="product-stack" aria-label="ProductionBuild surrounds trusted scientific logic with a usable and operable product system">
       <div class="stack-layer user-layer"><small>01</small><strong>User workflow</strong><span>guided review</span><span>exceptions</span><span>decision state</span></div>
-      <div class="stack-layer product-layer"><small>02</small><strong>Application product</strong><span>interface</span><span>roles</span><span>workflow state</span></div>
+      <div class="stack-layer product-layer"><small>02</small><strong>Production application</strong><span>interface</span><span>roles</span><span>review status</span></div>
       <div class="stack-layer logic-layer"><small>03</small><strong>Scientific logic</strong><span>R / Python packages</span><span>tests</span></div>
       <div class="stack-layer foundation-layer"><small>04</small><strong>Operating foundation</strong><span>identity</span><span>deploy</span><span>monitor</span><span>support</span></div>
     </div>
@@ -76,7 +76,7 @@ const footer = footerBySlug[service.slug];
     <div class="factory-layout" aria-label="AppFactory uses one shared delivery foundation to support a portfolio of distinct scientific applications">
       <div class="factory-apps"><div><small>APP 01</small><strong>Submission review</strong><span>Controlled</span></div><div><small>APP 02</small><strong>Lab analytics</strong><span>Validated</span></div><div><small>APP 03</small><strong>Model workspace</strong><span>Exploratory</span></div></div>
       <div class="factory-connectors" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="factory-base"><strong>Shared application foundation</strong><span>design system</span><span>identity</span><span>assurance patterns</span><span>deployment</span></div>
+      <div class="factory-base"><strong>Shared application foundation</strong><span>design system</span><span>identity</span><span>test and validation patterns</span><span>deployment</span></div>
     </div>
   )}
 

@@ -37,7 +37,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
 
   <section class="outcomes section-pad">
     <div class="wrap">
-      <div class="section-heading" data-reveal><div><span class="eyebrow">What changes</span><h2>Outcomes the team can feel.</h2></div><p>The engagement is organized around the work after delivery: the decision gets faster, the product gets used, and the operating burden becomes explicit.</p></div>
+      <div class="section-heading" data-reveal><div><span class="eyebrow">What changes</span><h2>Outcomes the team can measure.</h2></div><p>We define success around the work after delivery: faster turnaround, fewer manual steps, consistent review, reliable releases, and an application people use.</p></div>
       <div class="outcome-grid" data-reveal>
         {service.outcomes.map((outcome, i) => <article><span>0{i + 1}</span><h3>{outcome.title}</h3><p>{outcome.text}</p></article>)}
       </div>
@@ -46,14 +46,14 @@ const next = index < services.length - 1 ? services[index + 1] : null;
 
   <section class="deliverables section-pad" id="deliverables">
     <div class="wrap deliverable-grid">
-      <div data-reveal><span class="eyebrow mint">What you leave with</span><h2>Concrete artifacts, not a capability cloud.</h2><p>Exact scope follows the workflow, intended use, and systems involved. These are the standard outputs around which the engagement is shaped.</p></div>
+      <div data-reveal><span class="eyebrow mint">What you receive</span><h2>Concrete deliverables, defined up front.</h2><p>Exact scope depends on the current process, intended use, data sources, and systems involved. These are the standard outputs used to plan the engagement.</p></div>
       <ol data-reveal>{service.deliverables.map((deliverable, i) => <li><span>{String(i + 1).padStart(2, "0")}</span>{deliverable}</li>)}</ol>
     </div>
   </section>
 
   <section class="steps section-pad">
     <div class="wrap">
-      <div class="section-heading" data-reveal><div><span class="eyebrow">How it works</span><h2>A visible path from question to decision.</h2></div><p>No black-box build. The people doing, approving, and operating the work stay close to each material decision.</p></div>
+      <div class="section-heading" data-reveal><div><span class="eyebrow">How it works</span><h2>A visible path from current process to working release.</h2></div><p>Scientists, process owners, quality, and IT review the work throughout delivery instead of waiting for a finished application at the end.</p></div>
       <ol class="step-grid" data-reveal>{service.steps.map((step, i) => <li><span>{String(i + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
     </div>
   </section>
@@ -66,7 +66,7 @@ const next = index < services.length - 1 ? services[index + 1] : null;
   </section>
 
   <section class="assurance-note section-pad-small">
-    <div class="content-wrap note-grid" data-reveal><span class="note-mark">A</span><div><span class="mini-label">Assurance & ownership</span><h2>Clear boundaries make better systems.</h2><p>{service.assurance}</p></div></div>
+    <div class="content-wrap note-grid" data-reveal><span class="note-mark">A</span><div><span class="mini-label">Validation & ownership</span><h2>Responsibilities stay clear.</h2><p>{service.assurance}</p></div></div>
   </section>
 
   <nav class="service-pagination wrap" aria-label="Adjacent services">

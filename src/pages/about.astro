@@ -4,21 +4,21 @@ import CtaBand from "../components/CtaBand.astro";
 import { site } from "../config";
 ---
 
-<BaseLayout title={`About ${site.name}`} description={`${site.name} is a regulated application engineering partner for life-sciences teams, connecting workflow discovery, R and Python product development, assurance, deployment, and continued operation.`}>
+<BaseLayout title={`About ${site.name}`} description={`${site.name} builds, validates, deploys, and supports R and Python applications for life-sciences teams.`}>
   <section class="about-hero section-pad">
     <div class="wrap about-grid">
       <div data-reveal><span class="eyebrow">About {site.name}</span><h1>The accountable application partner for scientific work.</h1></div>
-      <div data-reveal><p class="lead">{site.name} helps life-sciences teams replace fragile spreadsheets, SAS chains, scripts, and manual review processes with governed R and Python applications.</p><p>The category is regulated application engineering: one delivery model that connects the workflow, software product, assurance evidence, deployment, and operating lifecycle.</p></div>
+      <div data-reveal><p class="lead">{site.name} helps life-sciences teams replace fragile spreadsheets, SAS scripts, locally run R and Python scripts, and manual review steps with dependable applications.</p><p>We handle the full application lifecycle: understand the current process, build the application, prepare validation evidence when required, deploy it, and support it after release.</p></div>
     </div>
   </section>
 
   <section class="story section-pad">
     <div class="wrap story-grid">
-      <div class="story-art" data-reveal><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><span>P</span><small>Workflow · product · evidence · operation</small></div>
+      <div class="story-art" data-reveal><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><span>P</span><small>Process · application · validation · support</small></div>
       <div class="timeline" data-reveal>
         <article><span>01 / Discover</span><h2>Begin with the work, not a technology preference.</h2><p>Map the people, decisions, data, systems, manual handoffs, failure points, and intended use before features and infrastructure become expensive.</p></article>
-        <article><span>02 / Build</span><h2>Engineer the complete product around the analysis.</h2><p>Keep scientific logic modular and independently tested while designing the interface, integrations, security, observability, deployment, and support model around real users.</p></article>
-        <article><span>03 / Assure</span><h2>Match evidence and controls to the application’s use.</h2><p>Connect requirements, risks, controls, tests, approvals, and releases so assurance develops with the product instead of being reconstructed afterward.</p></article>
+        <article><span>02 / Build</span><h2>Engineer the complete application around the analysis.</h2><p>Keep scientific calculations and model code modular and independently tested while designing the interface, integrations, security, monitoring, deployment, and support process around real users.</p></article>
+        <article><span>03 / Validate</span><h2>Match evidence and controls to the application’s use.</h2><p>Connect requirements, risks, controls, tests, approvals, and releases so validation evidence is captured during development instead of reconstructed afterward.</p></article>
         <article><span>04 / Operate</span><h2>Remain accountable as the application changes.</h2><p>Plan monitoring, dependency updates, incidents, enhancements, change impact, regression, controlled releases, and periodic review as part of the same system.</p></article>
       </div>
     </div>
@@ -26,16 +26,16 @@ import { site } from "../config";
 
   <section class="principles section-pad">
     <div class="wrap">
-      <div class="section-heading" data-reveal><div><span class="eyebrow mint">Working principles</span><h2>The standard behind the work.</h2></div><p>Technical quality is part of the product. So are the process, the user’s trust, and the organization’s ability to operate what gets built.</p></div>
-      <div class="principle-grid" data-reveal><article><span>01</span><h3>Workflow before interface</h3><p>Observe the decisions, handoffs, failure points, and responsibilities before choosing features.</p></article><article><span>02</span><h3>Logic outside the UI</h3><p>Keep scientific calculations modular and independently tested so they can be verified, reused, and changed safely.</p></article><article><span>03</span><h3>Assurance from intended use</h3><p>Apply evidence and controls in proportion to how the application is actually used.</p></article><article><span>04</span><h3>AI behind explicit standards</h3><p>Use AI to accelerate precise work while people remain accountable for judgment, risk, and release.</p></article><article><span>05</span><h3>Customer-owned foundations</h3><p>Build for the platforms, teams, and source-control boundaries the organization already governs.</p></article><article><span>06</span><h3>Operation is designed</h3><p>Monitoring, support, changes, evidence, and handover belong in the architecture before go-live.</p></article></div>
+      <div class="section-heading" data-reveal><div><span class="eyebrow mint">Working principles</span><h2>The standard behind the work.</h2></div><p>A successful application must be scientifically correct, usable by the intended team, reviewable by quality and IT, and supportable after release.</p></div>
+      <div class="principle-grid" data-reveal><article><span>01</span><h3>Process before interface</h3><p>Understand the decisions, handoffs, failure points, and responsibilities before choosing features.</p></article><article><span>02</span><h3>Logic outside the UI</h3><p>Keep scientific calculations modular and independently tested so they can be verified, reused, and changed safely.</p></article><article><span>03</span><h3>Controls based on intended use</h3><p>Match testing, documentation, traceability, and approvals to how the application will be used.</p></article><article><span>04</span><h3>AI works within clear standards</h3><p>Use AI to accelerate precise work while people remain accountable for judgment, risk, and release.</p></article><article><span>05</span><h3>Your team owns the foundation</h3><p>Build for the platforms, teams, repositories, and deployment environments your organization already manages.</p></article><article><span>06</span><h3>Support is designed before launch</h3><p>Monitoring, updates, incident response, documentation, and handover are planned before go-live.</p></article></div>
     </div>
   </section>
 
   <section class="capabilities section-pad">
-    <div class="wrap capabilities-grid" data-reveal><div><span class="eyebrow">Full-lifecycle capability</span><h2>Science, software, and assurance in one operating model.</h2></div><div class="capability-list"><span>Scientific workflow discovery</span><span>R and Python product engineering</span><span>Shiny, Streamlit, Dash, React & APIs</span><span>Data and model integration</span><span>User-centered workflow design</span><span>Automated verification</span><span>Validation-ready evidence</span><span>Deployment and managed releases</span></div></div>
+    <div class="wrap capabilities-grid" data-reveal><div><span class="eyebrow">Full application lifecycle</span><h2>Science, software, and validation in one team.</h2></div><div class="capability-list"><span>Process and requirements discovery</span><span>R and Python application engineering</span><span>Shiny, Streamlit, Dash, React & APIs</span><span>Data and model integration</span><span>User-centered application design</span><span>Automated testing</span><span>Validation-ready evidence</span><span>Deployment and managed releases</span></div></div>
   </section>
 
-  <CtaBand eyebrow="Start with one bounded workflow" title="Bring the process that needs a durable product owner." />
+  <CtaBand eyebrow="Start with one recurring process" title="Bring the analysis or review process that needs a reliable application." />
 </BaseLayout>
 
 <style>

@@ -3,7 +3,7 @@ export const site = {
   legalName: "Provenarium",
   url: "https://provenarium.com",
   description:
-    "Regulated application engineering for life sciences: workflow discovery, R and Python application development, validation-ready delivery, deployment, and ongoing assurance.",
+    "R and Python application development for life sciences, from process discovery and validation-ready delivery through deployment and ongoing support.",
   email: "hello@provenarium.com",
   consultationLabel: "Discuss a workflow"
 } as const;

@@ -9,8 +9,8 @@ import { site } from "../config";
       <div class="contact-copy" data-reveal>
         <span class="eyebrow mint">Start with the workflow</span>
         <h1>What work should be easier than it is?</h1>
-        <p>Bring one recurring scientific process, the people doing it, and the milestone it is affecting. The first conversation is for finding the smallest useful next move—not forcing a platform sale.</p>
-        <div class="expect"><span>In 30 minutes, we’ll cover</span><ul><li>The decision and current process</li><li>Users, systems, and manual handoffs</li><li>Intended use and likely assurance level</li><li>The smallest credible prototype or discovery step</li></ul></div>
+        <p>Bring one recurring analysis or review process, the people doing it, and the study, submission, or laboratory milestone it affects. The first conversation is about finding the smallest practical next step—not forcing a platform sale.</p>
+        <div class="expect"><span>In 30 minutes, we’ll cover</span><ul><li>The current steps and expected result</li><li>Users, data sources, systems, and manual handoffs</li><li>Intended use and likely validation requirements</li><li>The smallest practical discovery, prototype, or build step</li></ul></div>
         <a class="email-link" href={`mailto:${site.email}`}>{site.email}<span>↗</span></a>
       </div>
       <form class="contact-form" id="contact-form" data-email={site.email} data-reveal>
@@ -18,8 +18,8 @@ import { site } from "../config";
         <label><span>Your name</span><input name="name" autocomplete="name" required /></label>
         <label><span>Work email</span><input name="email" type="email" autocomplete="email" required /></label>
         <label><span>Organization</span><input name="organization" autocomplete="organization" /></label>
-        <label><span>What is the workflow?</span><textarea name="workflow" rows="5" required placeholder="Today we use… The people involved are… The bottleneck is…"></textarea></label>
-        <label><span>What makes it important now?</span><select name="trigger"><option value="">Select a trigger</option><option>Study or submission milestone</option><option>Laboratory or CMC program</option><option>Manual errors or cycle time</option><option>Existing app needs productionization</option><option>Validation or quality need</option><option>Application portfolio backlog</option><option>Other</option></select></label>
+        <label><span>What analysis or review process needs improvement?</span><textarea name="workflow" rows="5" required placeholder="Today we use… The people involved are… The slow or error-prone step is…"></textarea></label>
+        <label><span>What makes it important now?</span><select name="trigger"><option value="">Select a trigger</option><option>Study or submission milestone</option><option>Laboratory or CMC program</option><option>Manual errors or turnaround time</option><option>Existing app needs deployment or support</option><option>Validation or QA requirement</option><option>Application backlog</option><option>Other</option></select></label>
         <button class="button button-accent" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
         <p class="form-note">This launch version opens the completed brief in your email client. It does not send or store form data on the website.</p>
       </form>
