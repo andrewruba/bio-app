@@ -15,14 +15,20 @@ import { site } from "../config";
         <p>Every application strengthens a governed layer of templates, controls, evidence, and release automation. Once proven across a portfolio, that layer can support customer and partner developers—not only our delivery team.</p>
         <a class="button button-mint" href="/contact">Discuss the platform path <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="evidence-graph" data-reveal aria-label="Evidence graph connecting a requirement to a release">
-        <span class="graph-label">evidence graph / release 1.8.2</span>
-        <div class="graph-node requirement"><small>REQ</small><strong>4.2</strong><span>Calculation review</span></div>
-        <div class="graph-node risk"><small>RISK</small><strong>R-07</strong><span>Incorrect result</span></div>
-        <div class="graph-node control"><small>CTRL</small><strong>C-12</strong><span>Independent check</span></div>
-        <div class="graph-node test"><small>TEST</small><strong>E2E-14</strong><span>Passed</span></div>
-        <div class="graph-node release"><small>RELEASE</small><strong>1.8.2</strong><span>Approved</span></div>
-        <svg viewBox="0 0 600 600" aria-hidden="true"><path d="M145 140 C250 80 330 110 393 177M420 210 C490 270 480 342 412 393M380 425 C300 495 223 481 164 411M140 380 C76 306 81 224 130 170M174 158 C250 218 328 275 397 393" /></svg>
+      <div class="evidence-graph" data-reveal aria-label="Traceability chain connecting a requirement to an approved release">
+        <span class="graph-label">traceability chain / release 1.8.2</span>
+        <div class="evidence-chain">
+          <div class="graph-node"><small>REQ</small><strong>4.2</strong><span>Calculation review</span></div>
+          <i aria-hidden="true">→</i>
+          <div class="graph-node"><small>RISK</small><strong>R-07</strong><span>Incorrect result</span></div>
+          <i aria-hidden="true">→</i>
+          <div class="graph-node"><small>CTRL</small><strong>C-12</strong><span>Independent check</span></div>
+          <i aria-hidden="true">→</i>
+          <div class="graph-node"><small>TEST</small><strong>E2E-14</strong><span>Passed</span></div>
+          <i aria-hidden="true">→</i>
+          <div class="graph-node release"><small>RELEASE</small><strong>1.8.2</strong><span>Approved</span></div>
+        </div>
+        <div class="graph-summary"><span>Requirement covered</span><span>Current evidence linked</span><strong>Release approved ✓</strong></div>
       </div>
     </div>
   </section>
@@ -190,5 +196,34 @@ import { site } from "../config";
 
   @media(max-width:650px) {
     .module-grid article { min-height: 16rem; }
+  }
+</style>
+
+<style>
+  /* Traceability is shown as a readable chain, not a decorative orbit. */
+  .evidence-graph { aspect-ratio: auto; background: #112f25; display: block; margin-inline: auto; max-width: 62rem; min-height: 18rem; overflow: visible; padding: 1.3rem; position: relative; width: 100%; }
+  .graph-label { display: block; left: auto; position: static; top: auto; }
+  .evidence-chain { align-items: stretch; display: grid; gap: .45rem; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); margin-top: 2.1rem; }
+  .evidence-chain > i { align-self: center; color: var(--mint); font-family: var(--font-mono); font-size: .72rem; font-style: normal; }
+  .graph-node { background: #f7f8f3; border: 0; border-radius: .7rem; box-shadow: none; color: var(--ink); display: flex; flex-direction: column; height: auto; min-height: 7.4rem; padding: .8rem; position: static; width: auto; }
+  .graph-node small { color: var(--teal); font-family: var(--font-mono); }
+  .graph-node strong { font-size: 1.15rem; margin-top: .5rem; }
+  .graph-node span { margin-top: auto; padding-top: .7rem; }
+  .graph-node.release { background: var(--mint); bottom: auto; left: auto; }
+  .graph-summary { align-items: center; border-top: 1px solid rgba(255,255,255,.15); color: #c8d2cc; display: flex; font-family: var(--font-mono); font-size: .58rem; gap: 1.5rem; justify-content: flex-end; margin-top: 1.2rem; padding-top: .9rem; }
+  .graph-summary strong { color: var(--mint); font-weight: 550; }
+
+  @media(max-width:900px) {
+    .evidence-graph { aspect-ratio: auto; max-width: 48rem; min-height: 17rem; }
+  }
+  @media(max-width:650px) {
+    .evidence-graph { aspect-ratio: auto; max-width: 31rem; min-height: 0; padding: 1rem; }
+    .evidence-chain { grid-template-columns: 1fr; margin-top: 1.3rem; }
+    .evidence-chain > i { font-size: .55rem; justify-self: center; line-height: .55; transform: rotate(90deg); }
+    .graph-node { align-items: center; display: grid; gap: 0 .75rem; grid-template-columns: auto 1fr; height: auto; min-height: 3.7rem; padding: .55rem .7rem; width: auto; }
+    .graph-node small { grid-column: 1; }
+    .graph-node strong { grid-column: 1; margin-top: .1rem; }
+    .graph-node span { grid-column: 2; grid-row: 1 / 3; justify-self: end; padding-top: 0; text-align: right; }
+    .graph-summary { align-items: center; flex-direction: row; flex-wrap: wrap; gap: .4rem 1rem; justify-content: flex-start; }
   }
 </style>

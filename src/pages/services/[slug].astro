@@ -26,10 +26,15 @@ const next = index < services.length - 1 ? services[index + 1] : null;
       </div>
       <div class="service-diagram" data-reveal>
         <div class="diagram-head"><span>Offer / {service.number}</span><span>{site.name}</span></div>
-        <div class="diagram-center"><span class="diagram-number">{service.number}</span><strong>{service.name}</strong><small>{service.category}</small></div>
-        <div class="diagram-orbit o1"></div><div class="diagram-orbit o2"></div>
-        <span class="diagram-node n1">workflow</span><span class="diagram-node n2">product</span><span class="diagram-node n3">evidence</span><span class="diagram-node n4">operation</span>
-        <div class="diagram-foot"><span>customer-owned</span><span>risk-based</span><span>release-ready</span></div>
+        <div class="diagram-title"><span>{service.number}</span><strong>{service.name}</strong><small>{service.category}</small></div>
+        <div class="diagram-flow" aria-label="Representative application workflow: load, process, and generate report">
+          <div><small>01</small><strong>Load</strong><span>Data + parameters</span></div>
+          <i aria-hidden="true">→</i>
+          <div><small>02</small><strong>Process</strong><span>Controlled R / Python logic</span></div>
+          <i aria-hidden="true">→</i>
+          <div class="diagram-report"><small>03</small><strong>Generate report</strong><span>Review-ready output</span></div>
+        </div>
+        <div class="diagram-foot"><span>inputs recorded</span><span>logic versioned</span><span>output traceable</span></div>
       </div>
     </div>
   </section>
@@ -233,5 +238,49 @@ const next = index < services.length - 1 ? services[index + 1] : null;
     .step-grid li { min-height: 0; }
     .outcome-grid h3,
     .step-grid h3 { margin-top: 2.5rem; }
+  }
+</style>
+
+<style>
+  /* A representative application flow, sized as supporting evidence. */
+  .service-diagram { aspect-ratio: auto; background: #e7ece6; border-radius: 1.1rem 1.1rem 0 0; display: block; margin-inline: auto; max-width: 58rem; min-height: 21rem; padding: 3.6rem 2rem 2.6rem; width: 100%; }
+  .diagram-head,
+  .diagram-foot { left: 2rem; right: 2rem; }
+  .diagram-head { top: 1.25rem; }
+  .diagram-foot { bottom: 1.2rem; }
+  .diagram-title { align-items: baseline; display: flex; gap: .75rem; justify-content: center; text-align: center; }
+  .diagram-title > span { color: var(--teal); font-family: var(--font-mono); font-size: .65rem; }
+  .diagram-title strong { font-size: clamp(1.4rem,2.4vw,2.1rem); letter-spacing: -.04em; }
+  .diagram-title small { color: var(--ink-soft); font-family: var(--font-mono); font-size: .59rem; }
+  .diagram-flow { align-items: stretch; display: grid; gap: .65rem; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.15fr); margin: 2.2rem auto 0; max-width: 49rem; }
+  .diagram-flow > div { background: var(--paper); border: 1px solid rgba(8,11,9,.09); border-radius: .75rem; display: flex; flex-direction: column; min-height: 8.2rem; padding: 1rem; text-align: left; }
+  .diagram-flow > div.diagram-report { background: #173f31; border-color: #173f31; color: var(--paper); }
+  .diagram-flow small { color: var(--teal); font-family: var(--font-mono); font-size: .57rem; }
+  .diagram-report small { color: var(--mint); }
+  .diagram-flow strong { font-size: .95rem; margin-top: auto; padding-top: 1.5rem; }
+  .diagram-flow span { color: var(--ink-soft); font-size: .67rem; margin-top: .3rem; }
+  .diagram-report span { color: #c6d1ca; }
+  .diagram-flow > i { align-self: center; color: var(--teal); font-family: var(--font-mono); font-size: .8rem; font-style: normal; }
+
+  @media (max-width: 650px) {
+    .service-diagram { aspect-ratio: auto; max-width: 38rem; min-height: 19rem; padding-inline: 1rem; }
+    .diagram-head,
+    .diagram-foot { left: 1rem; right: 1rem; }
+    .diagram-title small { display: none; }
+    .diagram-flow { gap: .3rem; }
+    .diagram-flow > div { min-height: 7.5rem; padding: .7rem; }
+    .diagram-flow strong { font-size: .8rem; }
+    .diagram-flow span { font-size: .58rem; }
+  }
+  @media (max-width: 460px) {
+    .service-diagram { min-height: 18rem; }
+    .diagram-title { gap: .45rem; }
+    .diagram-title strong { font-size: 1.3rem; }
+    .diagram-flow { margin-top: 1.5rem; }
+    .diagram-flow > div { min-height: 6.7rem; padding: .6rem; }
+    .diagram-flow strong { font-size: .72rem; padding-top: 1rem; }
+    .diagram-flow span { font-size: .51rem; line-height: 1.25; }
+    .diagram-flow > i { font-size: .6rem; }
+    .diagram-foot span:nth-child(2) { display: none; }
   }
 </style>

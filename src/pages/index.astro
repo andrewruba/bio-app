@@ -20,28 +20,33 @@ import { site } from "../config";
         <p class="hero-note"><span>✦</span> AI-accelerated delivery. Human-accountable releases.</p>
       </div>
       <div class="hero-visual" data-reveal>
-        <div class="visual-topline"><span>Scientific review workspace</span><span class="live-dot">controlled</span></div>
+        <div class="visual-topline"><span>Representative assay reporting app</span><span class="live-dot">controlled</span></div>
         <div class="app-window">
           <aside class="app-side">
             <span class="app-logo">{site.name.charAt(0)}</span>
-            <span>Overview</span><span class="selected">Model review</span><span>Samples</span><span>Evidence</span>
+            <span>Overview</span><span>Load data</span><span>Process</span><span class="selected">Generate report</span>
           </aside>
           <div class="app-main">
-            <div class="app-heading"><div><small>MODEL / 03</small><strong>Potency assay review</strong></div><span>v1.8.2</span></div>
-            <div class="metrics"><div><small>Samples</small><strong>148</strong></div><div><small>Within range</small><strong>92%</strong></div><div><small>Review state</small><strong>Ready</strong></div></div>
+            <div class="app-heading"><div><small>REPORT / 03</small><strong>Assay analysis report</strong></div><span>v1.8.2</span></div>
+            <div class="app-steps" aria-label="Load, process, and generate report workflow">
+              <div><small>01</small><span><b>Load</b><em>assay_data.csv</em></span><i>✓</i></div>
+              <div><small>02</small><span><b>Process</b><em>validated calculation</em></span><i>✓</i></div>
+              <div class="current"><small>03</small><span><b>Generate report</b><em>review-ready output</em></span><i>PDF</i></div>
+            </div>
+            <div class="metrics"><div><small>Input rows</small><strong>148</strong></div><div><small>Checks passed</small><strong>12/12</strong></div><div><small>Report state</small><strong>Ready</strong></div></div>
             <div class="plot-card">
-              <div class="plot-label"><span>Observed vs. predicted</span><span>R² 0.91</span></div>
-              <svg viewBox="0 0 520 220" role="img" aria-label="Observed versus predicted assay response chart">
+              <div class="plot-label"><span>Processed assay response</span><span>QC passed</span></div>
+              <svg viewBox="0 0 520 180" role="img" aria-label="Processed assay response chart ready for a report">
                 <g class="grid-lines"><path d="M40 20V185M40 185H500M40 145H500M40 105H500M40 65H500" /></g>
                 <path class="band" d="M40 166 C135 145 205 124 285 94 S410 57 500 34 L500 69 C403 80 346 110 283 126 S145 171 40 184Z" />
                 <path class="curve" d="M40 175 C138 150 205 131 286 101 S411 64 500 45" />
                 <g class="points"><circle cx="73" cy="164" r="5"/><circle cx="111" cy="154" r="5"/><circle cx="151" cy="142" r="5"/><circle cx="192" cy="133" r="5"/><circle cx="230" cy="117" r="5"/><circle cx="269" cy="112" r="5"/><circle cx="305" cy="91" r="5"/><circle cx="348" cy="88" r="5"/><circle cx="390" cy="70" r="5"/><circle cx="426" cy="68" r="5"/><circle cx="466" cy="50" r="5"/></g>
               </svg>
             </div>
-            <div class="trace-row"><span><i></i> Requirement 4.2</span><span>Risk R-07</span><span>Test E2E-14 passed</span><span class="trace-check">✓</span></div>
+            <div class="trace-row"><span><i></i> Source batch recorded</span><span>Process v1.8.2</span><span>Report QC passed</span><span class="trace-check">✓</span></div>
           </div>
         </div>
-        <div class="visual-caption"><span>Analysis</span><span>Workflow</span><span>Evidence</span><span>Release</span></div>
+        <div class="visual-caption"><span>01 Load</span><span>02 Process</span><span>03 Generate report</span></div>
       </div>
     </div>
   </section>
@@ -74,10 +79,9 @@ import { site } from "../config";
       <div class="scene-caption"><span>Scientific review environment</span><strong>The interface belongs where the decision is made.</strong></div>
       <div class="scene-workflow" aria-label="Representative review workflow">
         <span class="mini-label">Representative workflow</span>
-        <div><small>01</small><b>Analysis runs</b><em>versioned inputs</em></div>
-        <div><small>02</small><b>Scientist reviews</b><em>guided exceptions</em></div>
-        <div><small>03</small><b>Quality verifies</b><em>linked evidence</em></div>
-        <div><small>04</small><b>Release moves</b><em>controlled record</em></div>
+        <div><small>01</small><b>Load data</b><em>controlled source files</em></div>
+        <div><small>02</small><b>Process analysis</b><em>versioned calculations</em></div>
+        <div><small>03</small><b>Generate report</b><em>review-ready output</em></div>
       </div>
     </div>
     <div class="wrap operating-facts" data-reveal>
@@ -122,16 +126,46 @@ import { site } from "../config";
       </div>
       <div class="workflow-grid">
         <article class="workflow-card featured" data-reveal>
-          <div class="workflow-art clinical-art" aria-hidden="true"><span class="dataset d1">ADSL</span><span class="dataset d2">ADAE</span><span class="dataset d3">TFL</span><i></i></div>
+          <div class="workflow-art flow-art clinical-art" aria-label="Representative clinical application: load ADaM datasets, process quality checks, and generate a QC report">
+            <div class="flow-chrome"><span>Clinical QC application</span><b>Ready</b></div>
+            <div class="flow-steps">
+              <div class="flow-step"><small>01</small><strong>Load</strong><span>ADaM datasets</span><em>3 files</em></div>
+              <i aria-hidden="true">→</i>
+              <div class="flow-step"><small>02</small><strong>Process</strong><span>Run QC checks</span><em>12 passed</em></div>
+              <i aria-hidden="true">→</i>
+              <div class="flow-step active"><small>03</small><strong>Generate report</strong><span>QC summary</span><em>PDF</em></div>
+            </div>
+            <div class="flow-output"><span>qc_report.pdf</span><b>Ready for review</b></div>
+          </div>
           <div class="workflow-copy"><span class="number-label">01 / Clinical & submission support</span><h3>Review and QC without the reconciliation maze.</h3><p>Clinical data review, TFL/ADaM/SDTM QC, submission readiness, biomarker review, cross-study reconciliation, and controlled reporting.</p><div class="tag-row"><span class="tag">Biometrics</span><span class="tag">Statistical programming</span><span class="tag">Data review</span></div></div>
         </article>
         <div class="workflow-stack">
           <article class="workflow-card" data-reveal>
-            <div class="workflow-art lab-art" aria-hidden="true"><div class="vial v1"></div><div class="vial v2"></div><div class="vial v3"></div><svg viewBox="0 0 300 100"><path d="M0 74 C32 61 47 88 81 65 S130 34 158 58 202 79 229 44 273 22 300 35" /></svg></div>
+            <div class="workflow-art flow-art lab-art" aria-label="Representative laboratory application: load an instrument export, process an assay, and generate a method report">
+              <div class="flow-chrome"><span>Assay calculation app</span><b>Controlled</b></div>
+              <div class="flow-steps">
+                <div class="flow-step"><small>01</small><strong>Load</strong><span>Instrument export</span><em>CSV</em></div>
+                <i aria-hidden="true">→</i>
+                <div class="flow-step"><small>02</small><strong>Process</strong><span>Calculate assay</span><em>QC passed</em></div>
+                <i aria-hidden="true">→</i>
+                <div class="flow-step active"><small>03</small><strong>Generate report</strong><span>Method report</span><em>PDF</em></div>
+              </div>
+              <div class="flow-output"><span>assay_report.pdf</span><b>Ready for review</b></div>
+            </div>
             <div class="workflow-copy"><span class="number-label">02 / Laboratory & CMC</span><h3>Make methods usable beyond the scientist who wrote them.</h3><p>Assay calculations, sample reconciliation, method transfer, stability review, instrument-data aggregation, and exception workflows above systems of record.</p><div class="tag-row"><span class="tag">Analytical development</span><span class="tag">Digital labs</span></div></div>
           </article>
           <article class="workflow-card" data-reveal>
-            <div class="workflow-art model-art" aria-hidden="true"><span>input</span><span>model</span><span>review</span><i></i><i></i></div>
+            <div class="workflow-art flow-art model-art" aria-label="Representative model application: load model inputs, run a prediction, and generate a review report">
+              <div class="flow-chrome"><span>Model review application</span><b>Version 2.3</b></div>
+              <div class="flow-steps">
+                <div class="flow-step"><small>01</small><strong>Load</strong><span>Model inputs</span><em>148 rows</em></div>
+                <i aria-hidden="true">→</i>
+                <div class="flow-step"><small>02</small><strong>Process</strong><span>Run prediction</span><em>Complete</em></div>
+                <i aria-hidden="true">→</i>
+                <div class="flow-step active"><small>03</small><strong>Generate report</strong><span>Review report</span><em>PDF</em></div>
+              </div>
+              <div class="flow-output"><span>prediction_review.pdf</span><b>Ready for review</b></div>
+            </div>
             <div class="workflow-copy"><span class="number-label">03 / Model-enabled research</span><h3>Put advanced models inside a workflow scientists will adopt.</h3><p>Prediction tools, chemometrics, computer vision, simulation orchestration, model review, and human-approved AI capabilities.</p><div class="tag-row"><span class="tag">Discovery</span><span class="tag">ML / AI</span><span class="tag">Modeling</span></div></div>
           </article>
         </div>
@@ -391,6 +425,91 @@ import { site } from "../config";
   @media (max-width: 430px) {
     .proof-grid { grid-template-columns: 1fr; }
     .proof-grid div, .proof-grid div:nth-child(3) { border-left: 1px solid var(--line); }
+  }
+</style>
+
+<style>
+  /* Scientific app diagrams: compact, familiar, and subordinate to the message. */
+  .hero-visual { max-width: 57rem; }
+  .app-window { grid-template-columns: 7rem 1fr; min-height: 26rem; }
+  .app-side { font-size: .61rem; padding: 1rem .65rem; }
+  .app-logo { margin-bottom: 1.25rem; }
+  .app-main { padding: .9rem; }
+  .app-heading { padding-bottom: .7rem; }
+  .app-heading strong { font-size: 1.15rem; }
+  .app-steps { display: grid; gap: .45rem; grid-template-columns: repeat(3,minmax(0,1fr)); margin: .7rem 0; }
+  .app-steps > div { align-items: center; background: #fff; border: 1px solid var(--line); border-radius: .5rem; display: grid; gap: .12rem .45rem; grid-template-columns: auto 1fr auto; min-width: 0; padding: .55rem; }
+  .app-steps > div.current { background: #edf6ee; border-color: rgba(37,122,87,.35); }
+  .app-steps small { color: var(--teal); font-family: var(--font-mono); font-size: .48rem; grid-row: 1 / 3; }
+  .app-steps span { min-width: 0; }
+  .app-steps b,
+  .app-steps em { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .app-steps b { font-size: .57rem; }
+  .app-steps em { color: var(--ink-soft); font-size: .47rem; font-style: normal; margin-top: .12rem; }
+  .app-steps i { color: var(--teal); font-family: var(--font-mono); font-size: .48rem; font-style: normal; }
+  .metrics { margin: .7rem 0; }
+  .metrics div { padding: .55rem .65rem; }
+  .metrics strong { font-size: 1.1rem; margin-top: .15rem; }
+  .plot-card { padding: .6rem; }
+  .plot-card svg { display: block; height: 9.2rem; margin-top: .25rem; width: 100%; }
+  .trace-row { margin-top: .45rem; padding: .5rem .6rem; }
+  .trace-check { height: 1.2rem; width: 1.2rem; }
+  .visual-caption { justify-content: flex-start; gap: clamp(2rem,8vw,5rem); }
+
+  .flow-art { color: var(--ink); display: block; padding: .8rem; }
+  .flow-art span { background: transparent; border-radius: 0; display: block; height: auto; width: auto; }
+  .flow-chrome { align-items: center; display: flex; font-family: var(--font-mono); font-size: .58rem; justify-content: space-between; letter-spacing: .04em; margin-bottom: .7rem; text-transform: uppercase; }
+  .flow-chrome b { align-items: center; display: flex; font-size: .56rem; font-weight: 550; gap: .35rem; }
+  .flow-chrome b::before { background: var(--mint); border-radius: 50%; content: ""; height: .38rem; width: .38rem; }
+  .flow-steps { display: grid; gap: .35rem; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.1fr); }
+  .flow-step { background: rgba(255,255,255,.92); border: 1px solid rgba(8,11,9,.1); border-radius: .65rem; display: flex; flex-direction: column; min-width: 0; padding: .75rem; }
+  .flow-step small { color: var(--teal); font-family: var(--font-mono); font-size: .51rem; }
+  .flow-step strong { font-size: .76rem; line-height: 1.15; margin-top: .65rem; }
+  .flow-step span { color: var(--ink-soft); font-size: .57rem; line-height: 1.25; margin-top: .25rem; }
+  .flow-step em { color: var(--teal); font-family: var(--font-mono); font-size: .49rem; font-style: normal; margin-top: auto; padding-top: .65rem; }
+  .flow-step.active { background: #edf6ee; border-color: rgba(37,122,87,.3); }
+  .flow-art .flow-steps > i { align-self: center; border: 0; border-radius: 0; color: var(--mint); font-family: var(--font-mono); font-size: .7rem; font-style: normal; height: auto; left: auto; position: static; top: auto; width: auto; }
+  .flow-output { align-items: center; background: rgba(255,255,255,.12); border-radius: .5rem; display: flex; font-family: var(--font-mono); font-size: .53rem; justify-content: space-between; margin-top: .55rem; padding: .5rem .65rem; }
+  .flow-output b { font-size: .51rem; font-weight: 550; }
+  .clinical-art { background: #174d3e; color: var(--paper); }
+  .clinical-art .flow-chrome b,
+  .clinical-art .flow-output { color: #dce8e0; }
+  .lab-art { background: #e4ebe3; }
+  .lab-art .flow-output { background: rgba(255,255,255,.7); }
+  .model-art { align-items: initial; background: #111713; color: var(--paper); display: block; gap: 0; justify-content: initial; }
+  .model-art .flow-chrome b,
+  .model-art .flow-output { color: #dce8e0; }
+  .model-art .flow-step span { color: var(--ink-soft); }
+  .partner-product { max-width: 43rem; }
+
+  @media (max-width: 1050px) {
+    .scene-workflow { grid-template-columns: repeat(3,1fr); }
+    .partner-product { max-width: 44rem; }
+  }
+  @media (max-width: 720px) {
+    .hero-visual { max-width: 100%; }
+    .app-window { grid-template-columns: 4.2rem 1fr; min-height: 23rem; }
+    .app-side { font-size: .5rem; padding-inline: .4rem; }
+    .app-main { padding: .65rem; }
+    .app-steps em { display: none; }
+    .app-steps > div { grid-template-columns: auto 1fr; }
+    .app-steps i { display: none; }
+    .plot-card svg { height: 7.5rem; }
+    .trace-row { grid-template-columns: 1fr auto; }
+    .trace-row span:nth-child(2),
+    .trace-row span:nth-child(3) { display: none; }
+    .flow-art { padding: .65rem; }
+    .flow-step { padding: .65rem .55rem; }
+    .flow-step strong { font-size: .71rem; }
+    .flow-step span { font-size: .53rem; }
+  }
+  @media (max-width: 430px) {
+    .app-side { display: none; }
+    .app-window { display: block; }
+    .app-heading > span { display: none; }
+    .flow-steps { gap: .22rem; }
+    .flow-art .flow-steps > i { font-size: .55rem; }
+    .flow-step span { display: none; }
   }
 </style>
 
@@ -700,5 +819,31 @@ import { site } from "../config";
     .method-track::before { display: none; }
     .method-track li { min-height: 9rem; }
     .method-track li::after { bottom: 1rem; top: auto; }
+  }
+</style>
+
+<style>
+  /* Final mockup sizing, after the broader composition rules above. */
+  .hero-grid,
+  .hero-copy,
+  .hero-visual,
+  .app-main { min-width: 0; }
+  .hero-visual { max-width: 57rem; }
+  .app-window { grid-template-columns: 7rem 1fr; min-height: 26rem; }
+  .workflow-card.featured { grid-template-rows: 14rem auto; }
+  .flow-step { color: var(--ink); }
+  .flow-art .flow-steps > i { background: transparent; }
+
+  @media (min-width: 721px) and (max-width: 1050px) {
+    .scene-workflow { grid-template-columns: repeat(3,1fr); }
+  }
+  @media (max-width: 720px) {
+    .hero-visual { max-width: 100%; }
+    .hero h1 { max-width: 100%; }
+    .app-window { grid-template-columns: 4.2rem 1fr; min-height: 23rem; }
+    .workflow-card.featured { grid-template-rows: 15rem auto; }
+  }
+  @media (max-width: 430px) {
+    .app-window { display: block; }
   }
 </style>
